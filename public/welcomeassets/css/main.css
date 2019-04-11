@@ -1047,6 +1047,9 @@ button:focus {
 /* ==========================================================================
    team section
    ========================================================================== */
+#team{
+  background-color: #00c292;
+}
 #team .single-team {
   border: 1px solid #ddd;
   position: relative;
