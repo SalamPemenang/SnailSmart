@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+// ADMIN
+Route::group(['prefix' => 'admin'], function(){
+	// Login Admin
+	Route::get('/login', 'Admin\AdminLoginController@index')->name('admin-login');
+	Route::post('/login/added', 'Admin\AdminLoginController@login')->name('admin-store');
+	Route::get('/dashboard', 'Admin\AdminController@index')->name('admin-dashboard');
+});
+
+// USER
+Route::group(['prefix' => 'user'], function(){
+	Route::get('/home', 'HomeController@index')->name('home');
+});
+
