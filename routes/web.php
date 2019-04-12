@@ -28,5 +28,6 @@ Route::group(['prefix' => 'admin'], function(){
 // USER
 Route::group(['prefix' => 'user'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 });
 

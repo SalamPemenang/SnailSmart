@@ -78,7 +78,7 @@
 <!-- Header Section End --> 
 
 <!-- Business Plan Section Start -->
-<section id="business-plan">
+<section id="services">
   <div class="container">
 
     <div class="row">

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}">
+    <!-- meanmenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{{asset('assets/css/meanmenu/meanmenu.min.css')}}">
     <!-- animate CSS
         ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
