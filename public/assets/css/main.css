@@ -9,7 +9,17 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+.topay > b{
+    color: white;
+    text-shadow: 2px 2px 2px white;
+    font-size: 12px;
+    margin-left: -11px;
+}
+.logout{
+    color: #e61610;
+    margin-left: 5px;
+    font-size: 5px;
+}
 html {
     color: #222;
     font-size: 1em;
