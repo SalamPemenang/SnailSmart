@@ -89,7 +89,7 @@
   <div class="col-lg-12 col-md-12 pl-4 text-center">
     <div class="business-item-info">
       <h3>Tentang Kami</h3>
-      <p>To-Pay adalah aplikasi yang memberikan kemudahanbr<br>dalam hal keuangan, Seperti menabung,pembayaran sekolah<br>maupun 
+      <p>To-Pay adalah aplikasi yang memberikan kemudahan <br>dalam hal keuangan, Seperti menabung,pembayaran sekolah<br>maupun 
       berdonasi.</p>
   </div>
 </div>
