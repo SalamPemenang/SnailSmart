@@ -15,13 +15,15 @@ class CreateGovernmentTable extends Migration
     {
         Schema::create('government', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('npsn');
-            $table->string('school');
+            $table->string('npsn')->nullable();
+            $table->string('no_rek')->nullable();
+            $table->string('name')->nullable();
+            $table->string('type')->nullable();
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
-            $table->string('email');
-            $table->string('password');
-            $table->string('website-school')->nullable();
+            $table->string('email')->nullable();
+            $table->string('password')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
     }

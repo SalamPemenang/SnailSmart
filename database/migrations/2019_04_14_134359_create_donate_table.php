@@ -15,9 +15,10 @@ class CreateDonateTable extends Migration
     {
         Schema::create('donate', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('government_id')->nullable();
             $table->foreign('government_id')->references('id')->on('government')->onDelete('cascade');
-            $table->date('date');
             $table->string('donate');
             $table->timestamps();
         });
