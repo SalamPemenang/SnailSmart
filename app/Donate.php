@@ -11,4 +11,15 @@ class Donate extends Model
     protected $fillable = [
     	'donate',
     ];
+
+    public function user()
+    {
+    		return $this->belongsTo('App\User');
+    }
+
+    public function government()
+    {
+    		return $this->belongsTo('App\Government');
+    }
+
 }

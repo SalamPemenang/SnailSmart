@@ -12,4 +12,9 @@ class Transaction extends Model
     		'debit',
     		'kredit',
     ];
+
+    public function user()
+    {
+    		return $this->belongsTo('App\User');
+    }
 }

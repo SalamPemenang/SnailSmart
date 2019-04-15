@@ -11,4 +11,9 @@ class Saldo extends Model
     protected $fillable = [
     	'nominal',
     ];
+
+    public function user()
+    {
+    		return $this->belongsTo('App\User');
+    }
 }

@@ -19,4 +19,10 @@ class Government extends Model
     		'password',
     		'website',
     ];
+
+    public function donate()
+    {
+        return $this->hasMany('App\Donate');
+    }
+    
 }
