@@ -7,8 +7,8 @@
     <title>Login Admin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/img/title logo.png" type="image/png">
 
-    @include('partials.titlelogo')
     @include('partials.assets-head')
 </head>
 
@@ -47,13 +47,6 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-                        <div class="fm-checkbox">
-                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
                         </div>
                         <button type="submit" class="btn btn-login btn-success btn-float">
                             <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
