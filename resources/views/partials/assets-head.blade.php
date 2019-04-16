@@ -1,39 +1,6 @@
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <!-- font awesome CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
-    <!-- owl.carousel CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.transitions.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/meanmenu/meanmenu.min.css')}}">
-    <!-- animate CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <!-- normalize CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/normalize.css')}}">
-    <!-- mCustomScrollbar CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
-    <!-- wave CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/wave/waves.min.css')}}">
-    <!-- Notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/notika-custom-icon.css')}}">
-    <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
-    <!-- style CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/style.css')}}">
-    <!-- responsive CSS
-        ============================================ -->
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-    <!-- modernizr JS
-        ============================================ -->
-    <script src="{{asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="{{asset('styles/shards-dashboards.1.1.0.min.css')}}">
+    <link rel="stylesheet" href="{{asset('styles/extras.1.1.0.min.css')}}">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
