@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepositTable extends Migration
+class CreateTransactionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDepositTable extends Migration
      */
     public function up()
     {
-        Schema::create('deposit', function (Blueprint $table) {
+        Schema::create('transaction', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->date('date');
-            $table->string('nominal');
+            $table->string('debit')->nullable();
+            $table->string('kredit')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDepositTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deposit');
+        Schema::dropIfExists('transaction');
     }
 }
