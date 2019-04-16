@@ -414,7 +414,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="site-info text-center">
-          <span>Design By <a href="" style="color: #00febf;">SnailSmart</a> &copy; 2019</span>
+          <span>Design By <a href="" style="color: #00febf;">SnailSmart</a></span>
       </div>              
 
   </div>
