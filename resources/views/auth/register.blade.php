@@ -7,9 +7,45 @@
     <title>Register User</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    @include('partials.titlelogo')
-    @include('partials.assets-head')
+    <link rel="shortcut icon" href="/img/title logo.png" type="image/png">
+     <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/bootstrap.min.css">
+    <!-- font awesome CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/log-regassets/css/owl.theme.css">
+    <link rel="stylesheet" href="/log-regassets/css/owl.transitions.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/normalize.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- wave CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/wave/waves.min.css">
+    <!-- Notika icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/notika-custom-icon.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/main.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/style.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="/log-regassets/css/responsive.css">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="/log-regassets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -19,11 +55,11 @@
                 
                 <img src="img/logo.png" width="60" alt="">
                 <span class="topay"><b>To-Pay</b></span>
-
+                <br><br>
                  <form method="POST" action="{{ route('register') }}">
                         @csrf
                     <div class="nk-form mb-5">
-                        <h4>Ayoo Daftar Sekarang</h4>
+                        <h4 style="font-size: 20px">Ayoo Daftar Sekarang</h4>
                         <div class="input-group">
                             <span class="input-group-addon nk-ic-st-pro"><i class="notika-icon notika-support"></i></span>
                             <div class="nk-int-st">
@@ -66,11 +102,8 @@
                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Ulangi Password">
                             </div>
                         </div>
-                        <div class="fm-checkbox">
-                            <label><input class="i-checks" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> <i></i> Remember Me</label>
-                        </div>
                         <button type="submit" class="btn btn-login btn-success btn-float">
-                            <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
+                            <i class="notika-icon notika-right-arrow"></i>
                         </button>
                     </div>
 
@@ -80,7 +113,72 @@
                 </div>
 
                 <!-- Login Register area End-->
-                @include('partials.assets-foot')
+                               <!-- jquery
+        ============================================ -->
+    <script src="log-regassets/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="log-regassets/js/bootstrap.min.js"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="log-regassets/js/wow.min.js"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="log-regassets/js/jquery-price-slider.js"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="log-regassets/js/owl.carousel.min.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="log-regassets/js/jquery.scrollUp.min.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="log-regassets/js/meanmenu/jquery.meanmenu.js"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="log-regassets/js/counterup/jquery.counterup.min.js"></script>
+    <script src="log-regassets/js/counterup/waypoints.min.js"></script>
+    <script src="log-regassets/js/counterup/counterup-active.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="log-regassets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="log-regassets/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="log-regassets/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+        ============================================ -->
+    <script src="log-regassets/js/flot/jquery.flot.js"></script>
+    <script src="log-regassets/js/flot/jquery.flot.resize.js"></script>
+    <script src="log-regassets/js/flot/flot-active.js"></script>
+    <!-- knob JS
+        ============================================ -->
+    <script src="log-regassets/js/knob/jquery.knob.js"></script>
+    <script src="log-regassets/js/knob/jquery.appear.js"></script>
+    <script src="log-regassets/js/knob/knob-active.js"></script>
+    <!--  Chat JS
+        ============================================ -->
+    <script src="log-regassets/js/chat/jquery.chat.js"></script>
+    <!--  wave JS
+        ============================================ -->
+    <script src="log-regassets/js/wave/waves.min.js"></script>
+    <script src="log-regassets/js/wave/wave-active.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="log-regassets/js/icheck/icheck.min.js"></script>
+    <script src="log-regassets/js/icheck/icheck-active.js"></script>
+    <!--  todo JS
+        ============================================ -->
+    <script src="log-regassets/js/todo/jquery.todo.js"></script>
+    <!-- Login JS
+        ============================================ -->
+    <script src="log-regassets/js/login/login-action.js"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="log-regassets/js/plugins.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="log-regassets/js/main.js"></script>
             </body>
 
-            </html>
+            </html
