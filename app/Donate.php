@@ -17,6 +17,11 @@ class Donate extends Model
     		return $this->belongsTo('App\User');
     }
 
+    public function category()
+    {
+            return $this->belongsTo('App\Category');
+    }
+
     public function government()
     {
     		return $this->belongsTo('App\Government');

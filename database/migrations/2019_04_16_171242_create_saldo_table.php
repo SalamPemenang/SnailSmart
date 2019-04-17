@@ -17,7 +17,9 @@ class CreateSaldoTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('nominal');
+            $table->string('debit')->nullable();
+            $table->string('kredit')->nullable();
+            $table->string('nominal')->nullable();
             $table->timestamps();
         });
     }

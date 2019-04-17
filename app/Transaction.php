@@ -17,4 +17,9 @@ class Transaction extends Model
     {
     		return $this->belongsTo('App\User');
     }
+
+    public function school()
+    {
+    		return $this->belongsTo('App\School');
+    }
 }
