@@ -17,6 +17,8 @@ class CreateTransactionTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedInteger('agen_id')->nullable();
+            $table->foreign('agen_id')->references('id')->on('agen')->onDelete('cascade');
             $table->string('debit')->nullable();
             $table->string('kredit')->nullable();
             $table->string('ket')->nullable();

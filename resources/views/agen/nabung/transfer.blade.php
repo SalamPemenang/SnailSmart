@@ -16,11 +16,11 @@
 								<input type="hidden" name="id" value="{{$user->id}}">
 								<input type="hidden" name="user_id" value="{{$user->id}}">
 								<input type="hidden" name="agen_id" value="{{$agen->id}}">
-								<input type="hidden" name="totalagen" class="form-control" value="{{$agen->saldo}}">
-								<input type="hidden" name="saldouser" class="form-control" value="{{$user->saldo}}">
+								<input type="hidden" name="totalagen" class="form-control" name="{{$agen->saldo}}" value="{{$agen->saldo}}">
+								<input type="hidden" name="saldouser" class="form-control" name="{{$agen->saldo}}" value="{{$user->saldo}}">
 								<div class="form-group mt-3">
-									<label for="saldo">Saldo*</label>
-									<input type="text" name="saldo" class="form-control" name="{{$user->saldo}}">
+									<label for="saldo">Nabung*</label>
+									<input type="text" name="saldo" class="form-control" name="{{$user->save}}">
 								</div>
 								<div class="form-group">
 									<button class="btn btn-success">Kirim</button>
