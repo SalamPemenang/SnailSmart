@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -8,9 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/img/title logo.png" type="image/png">
-
-    @include('partials.assets-head')
-</head>
+    @include('partials.assets-head-login')
+</head> 
 
 <body>
         <div class="login-content">
@@ -20,7 +19,7 @@
                 <img src="/img/Logo.png" width="60" alt="">
                 <span class="topay"><b>To-Pay</b></span>
 
-                <form method="POST" action="{{ route('school.store') }}">
+                <form method="POST" action="{{ route('agen.store') }}">
                         @csrf
                     <div class="nk-form mb-5">
                         <h4>Masukan Akun anda</h4>
@@ -48,15 +47,58 @@
                                 @endif
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-login btn-success btn-float">
-                            <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
-                        </button>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button type="submit" class="btn btn-success btn-block">Masuk</button>
+                            </div>
+                            <br><br>
+                        </div>
                     </div>
                 </form>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="register" style="color: white;">Belum Punya Akun ?</a>
+                     </div>
+                </div>
+                <div class="nk-block toggled">
+                    <div class="nk-form mb-5">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h5>Masuk Sebagai</h5>
+                                <hr>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                             <a href="../login">
+                                 <button class="btn btn-primary btn-block">User</button>
+                             </a>
+                         </div>
+                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <a href="{{route('school.login')}}">
+                                <button class="btn btn-primary btn-block">Sekolah</button>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         <a href="{{route('government.login')}}">
+                             <button class="btn btn-primary btn-block">Lembaga Donasi</button>
+                         </a>
+                     </div>
+                 </div>
+             </div>
                 </div>
 
                 <!-- Login Register area End-->
-                @include('partials.assets-foot')
+                @include('partials.assets-foot-login')
             </body>
 
             </html>

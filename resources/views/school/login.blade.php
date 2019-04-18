@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login Agen</title>
+    <title>Login Sekolah</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/img/title logo.png" type="image/png">
 
-    @include('partials.assets-head')
+    @include('partials.assets-head-login')
 </head>
 
 <body>
@@ -48,15 +48,49 @@
                                 @endif
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-login btn-success btn-float">
-                            <i class="notika-icon notika-right-arrow right-arrow-ant"></i>
-                        </button>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <button type="submit" class="btn btn-success btn-block">Masuk</button>
+                            </div>
+                            <br><br>
+                        </div>
                     </div>
                 </form>
+                <div class="nk-block toggled">
+                    <div class="nk-form mb-5">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h5>Masuk Sebagai</h5>
+                                <hr>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                             <a href="../login">
+                                 <button class="btn btn-primary btn-block">User</button>
+                             </a>
+                         </div>
+                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <a href="{{route('agen.login')}}">
+                                <button class="btn btn-primary btn-block">Agen</button>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         <a href="{{route('government.login')}}">
+                             <button class="btn btn-primary btn-block">Lembaga Donasi</button>
+                         </a>
+                     </div>
+                 </div>
+             </div>
                 </div>
 
                 <!-- Login Register area End-->
-                @include('partials.assets-foot')
+                @include('partials.assets-foot-login')
             </body>
 
             </html>
