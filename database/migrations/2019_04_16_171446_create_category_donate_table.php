@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSaldoTable extends Migration
+class CreateCategoryDonateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateSaldoTable extends Migration
      */
     public function up()
     {
-        Schema::create('saldo', function (Blueprint $table) {
+        Schema::create('category_donate', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('debit')->nullable();
-            $table->string('kredit')->nullable();
-            $table->string('nominal')->nullable();
+            $table->string('image')->nullable();
+            $table->string('category')->nullable();
+            $table->string('ket')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateSaldoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saldo');
+        Schema::dropIfExists('category_donate');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGovernmentSchoolTable extends Migration
+class CreateSchoolTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateGovernmentSchoolTable extends Migration
      */
     public function up()
     {
-        Schema::create('government_school', function (Blueprint $table) {
+        Schema::create('school', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('payment_id')->nullable();
+            $table->foreign('payment_id')->references('id')->on('category_payment')->onDelete('cascade');
             $table->string('npsn')->nullable();
             $table->string('no_rek')->nullable();
             $table->string('name')->nullable();
@@ -34,6 +36,6 @@ class CreateGovernmentSchoolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('government_school');
+        Schema::dropIfExists('school');
     }
 }

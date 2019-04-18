@@ -15,8 +15,8 @@ class CreateGovernmentTable extends Migration
     {
         Schema::create('government', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedInteger('donate_id')->nullable();
+            $table->foreign('donate_id')->references('id')->on('category_donate')->onDelete('cascade');
             $table->string('npsn')->nullable();
             $table->string('no_rek')->nullable();
             $table->string('name')->nullable();

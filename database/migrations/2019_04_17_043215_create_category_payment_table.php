@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransactionTable extends Migration
+class CreateCategoryPaymentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTransactionTable extends Migration
      */
     public function up()
     {
-         Schema::create('transaction', function (Blueprint $table) {
+         Schema::create('category_payment', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedInteger('school_id')->nullable();
-            $table->foreign('school_id')->references('id')->on('government_school')->onDelete('cascade');
             $table->string('tahunan')->nullable();
             $table->string('bulanan')->nullable();
             $table->string('daftar_ulang')->nullable();
@@ -37,6 +33,6 @@ class CreateTransactionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaction');
+        Schema::dropIfExists('category_payment');
     }
 }
