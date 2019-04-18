@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Agen extends Authenticatable
 {
+
+    use Notifiable;
+
     protected $table = 'agen';
 
     protected $fillable = [

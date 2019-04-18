@@ -94,6 +94,10 @@ Route::group(['prefix' => 'agen'], function(){
 	Route::get('/login', 'Agen\AgenLoginController@index')->name('agen.login');
 	Route::post('/login/added', 'Agen\AgenLoginController@login')->name('agen.store');
 	Route::get('/dashboard', 'Agen\AgenController@index')->name('agen.dashboard');
+	Route::get('/search-user', 'Agen\AgenController@searchUser')->name('agen.search');
+	Route::get('/search-user/add', 'Agen\AgenController@getUser')->name('agen.get');
+	Route::get('/user/{id}', 'Agen\AgenController@formSaldo')->name('agen.edit');
+	Route::post('/search-user/post', 'Agen\AgenController@transferSaldo')->name('agen.post');
 });
 
 // SCHOOL

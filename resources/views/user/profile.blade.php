@@ -38,7 +38,7 @@ Profile
 
             <h4 class="mb-0">{{Auth::user()->name}}</h4>
             <span class="text-muted d-block mb-2">
-              <span><b>No Rekening</b></span> : {{Auth::user()->no_rek}}
+              <span><b>Virtual account</b></span> : {{Auth::user()->virtual_account}}
             </span>
             <span class="text-muted d-block mb-2">
               <span><b>Nomor telepon</b></span> : {{Auth::user()->phone}}
