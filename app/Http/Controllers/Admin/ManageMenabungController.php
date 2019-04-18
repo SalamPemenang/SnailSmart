@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Saldo;
 
 class ManageMenabungController extends Controller
 {
@@ -14,8 +15,8 @@ class ManageMenabungController extends Controller
      */
     public function index()
     {
-        $result = Saldo::all();
-        return $result;
+        $nabung = Saldo::all();
+        return view('admin.nabung.index', ['nabung' => $nabung]);
     }
 
     /**

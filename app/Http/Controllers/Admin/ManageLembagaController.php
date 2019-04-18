@@ -15,8 +15,8 @@ class ManageLembagaController extends Controller
      */
     public function index()
     {
-        $result = Government::all();
-        return $result;
+        $lembaga = Government::all();
+        return view('admin.lembaga.index', ['lembaga' => $lembaga]);
     }
 
     /**

@@ -23,8 +23,12 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::get('/login', 'Admin\AdminLoginController@index')->name('admin-login');
 	Route::post('/login/added', 'Admin\AdminLoginController@login')->name('admin-store');
 	Route::get('/dashboard', 'Admin\AdminController@index')->name('admin-dashboard');
+	// donasi
 	Route::get('/donasi', 'Admin\ManageDonasiController@index')->name('admin.donasi');
+	// Lembaga
 	Route::get('/lembaga', 'Admin\ManageLembagaController@index')->name('admin.lembaga');
+	// Saldo / Menabung
+	Route::get('/nabung', 'Admin\ManageMenabungController@index')->name('admin.nabung');
 });
 
 // USER
@@ -40,18 +44,21 @@ Route::group(['prefix' => 'home'], function(){
 	Route::post('/saldo/edit/{id}', 'User\MenabungController@edit')->name('saldo.add');
 });
 
+// AGEN
 Route::group(['prefix' => 'agen'], function(){
 	Route::get('/login', 'Agen\AgenLoginController@index')->name('agen.login');
 	Route::post('/login/added', 'Agen\AgenLoginController@login')->name('agen.store');
 	Route::get('/dashboard', 'Agen\AgenController@index')->name('agen.dashboard');
 });
 
+// SCHOOL
 Route::group(['prefix' => 'school'], function(){
 	Route::get('/login', 'School\SchoolLoginController@index')->name('school.login');
 	Route::post('/login/added', 'School\SchoolLoginController@login')->name('school.store');
 	Route::get('/dashboard', 'School\SchoolController@index')->name('school.dashboard');
 });
 
+// GOVERNMENT
 Route::group(['prefix' => 'government'], function(){
 	Route::get('/login', 'Government\GovernmentLoginController@index')->name('government.login');
 	Route::post('/login/added', 'Government\GovernmentLoginController@login')->name('government.store');
