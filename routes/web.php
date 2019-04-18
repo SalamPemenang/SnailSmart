@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // ADMIN
 Route::group(['prefix' => 'admin'], function(){
@@ -54,17 +54,39 @@ Route::group(['prefix' => 'admin'], function(){
 
 // USER
 Route::group(['prefix' => 'home'], function(){
-	Route::get('/', 'HomeController@index')->name('home');
-	Route::get('/profile', 'HomeController@profile')->name('profile');
-	Route::post('/profile/edit', 'User\UserController@editProfile')->name('edit-profile');
-	Route::post('/profile/edit/foto', 'User\UserController@editfotoProfile')->name('edit-foto-profile');
-	// Donasi
-	Route::get('/donasi', 'User\DonasiController@category')->name('donasi.category');
-	Route::get('/donasi/lembaga', 'User\DonasiController@government')->name('donasi.government');
-	Route::get('/donasi/form/{id}', 'User\DonasiController@formDonate')->name('donasi.form');
+	Route::get('/', 'HomeController@index')->name('home')
+	->middleware('verified');
 
-	Route::get('/saldo/{id}', 'User\MenabungController@index')->name('saldo');
-	Route::post('/saldo/edit/{id}', 'User\MenabungController@edit')->name('saldo.add');
+	Route::get('/profile', 'HomeController@profile')->name('profile')
+	->middleware('verified');
+
+	Route::post('/profile/edit', 'User\UserController@editProfile')->name('edit-profile')
+	->middleware('verified');
+
+	Route::post('/profile/edit/foto', 'User\UserController@editfotoProfile')->name('edit-foto-profile')
+	->middleware('verified');
+
+	Route::get('/profile/ganti-kata-sandi', 'User\UserController@showgantisandi')->name('ganti-kata-sandi')
+	->middleware('verified');
+
+	Route::post('/profile/edit/Kata-Sandi', 'User\UserController@editkatasandi')->name('edit-Kata-sandi')
+	->middleware('verified');
+
+	// Donasi
+	Route::get('/donasi', 'User\DonasiController@category')->name('donasi.category')
+	->middleware('verified');
+
+	Route::get('/donasi/lembaga', 'User\DonasiController@government')->name('donasi.government')
+	->middleware('verified');
+
+	Route::get('/donasi/form/{id}', 'User\DonasiController@formDonate')->name('donasi.form')
+	->middleware('verified');
+
+	Route::get('/saldo/{id}', 'User\MenabungController@index')->name('saldo')
+	->middleware('verified');
+	
+	Route::post('/saldo/edit/{id}', 'User\MenabungController@edit')->name('saldo.add')
+	->middleware('verified');
 });
 
 // AGEN

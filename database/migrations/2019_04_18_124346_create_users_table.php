@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('school_id')->nullable();
             $table->foreign('school_id')->references('id')->on('school')->onDelete('cascade');
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('nik')->nullable();
             $table->string('virtual_account')->nullable();
             $table->string('name')->nullable();
@@ -25,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('photo')->default('default.jpg');
-            $table->string('saldo')->nullable();
+            $table->string('saldo')->nullable()->default('0');
             $table->string('save')->nullable();
             $table->rememberToken();
             $table->timestamps();
