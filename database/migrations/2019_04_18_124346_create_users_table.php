@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->default('default.jpg');
             $table->string('saldo')->nullable();
             $table->string('save')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
