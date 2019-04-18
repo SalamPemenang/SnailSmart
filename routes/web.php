@@ -23,12 +23,33 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::get('/login', 'Admin\AdminLoginController@index')->name('admin-login');
 	Route::post('/login/added', 'Admin\AdminLoginController@login')->name('admin-store');
 	Route::get('/dashboard', 'Admin\AdminController@index')->name('admin-dashboard');
+
 	// donasi
-	Route::get('/donasi', 'Admin\ManageDonasiController@index')->name('admin.donasi');
+	Route::get('/manage-donasi', 'Admin\ManageDonasiController@index')->name('admin.donasi');
+	Route::get('/manage-donasi/{id}', 'Admin\ManageDonasiController@edit')->name('admin.donasi.edit');
+	Route::post('/manage-donasi/post', 'Admin\ManageDonasiController@store')->name('admin.donasi.store');
+	Route::delete('/manage-donasi/{delete}', 'Admin\ManageDonasiController@destroy')->name('admin.donasi.delete');
+
 	// Lembaga
-	Route::get('/lembaga', 'Admin\ManageLembagaController@index')->name('admin.lembaga');
+	Route::get('/manage-lembaga', 'Admin\ManageLembagaController@index')->name('admin.lembaga');
+	Route::get('/manage-lembaga/{id}', 'Admin\ManageLembagaController@edit')->name('admin.lembaga.edit');
+	Route::post('/manage-lembaga/post', 'Admin\ManageLembagaController@store')->name('admin.lembaga.store');
+	Route::delete('/manage-lembaga/{delete}', 'Admin\ManageLembagaController@destroy')->name('admin.lembaga.delete');
+
 	// Saldo / Menabung
-	Route::get('/nabung', 'Admin\ManageMenabungController@index')->name('admin.nabung');
+	Route::get('/manage-nabung', 'Admin\ManageMenabungController@index')->name('admin.nabung');
+
+	// Sekolah
+	Route::get('/manage-sekolah', 'Admin\ManagePembayaranController@index')->name('admin.sekolah');
+
+	// User
+	Route::get('/manage-user', 'Admin\ManageUserController@index')->name('admin.user');
+
+	// Agen
+	Route::get('/manage-agen', 'Admin\ManageAgenController@index')->name('admin.agen');
+	Route::get('/manage-agen/{id}', 'Admin\ManageAgenController@edit')->name('admin.agen.edit');
+	Route::post('/manage-agen/post', 'Admin\ManageAgenController@store')->name('admin.agen.store');
+	Route::delete('/manage-agen/delete/{id}', 'Admin\ManageAgenController@destroy')->name('admin.agen.delete');
 });
 
 // USER

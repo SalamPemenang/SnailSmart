@@ -2,25 +2,23 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Agen extends  Authenticatable
+class Agen extends Model
 {
-    use Notifiable;
-
     protected $table = 'agen';
 
     protected $fillable = [
-    	'name',
-    	'nik',
-    	'no_rek',
-    	'no_ktp',
-    	'email',
-    	'password',
-    	'address',
-    	'phone',
-    	'photo',
+    	'name', 
+      'email', 
+      'password', 
+      'nik', 
+      'no_rek', 
+      'virtual_account', 
+      'address', 
+      'phone', 
+      'photo',
+      'saldo',
+      'save',
     ];
 }

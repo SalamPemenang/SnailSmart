@@ -30,7 +30,7 @@
 									<td>{{$value->phone}}</td>
 									<td>{{$value->website}}</td>
 									<td width="10px">
-										<a href="" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{ route('admin.lembaga.edit', ($value->id)) }}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
 										<form action="">
