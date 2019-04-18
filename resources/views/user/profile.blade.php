@@ -11,6 +11,12 @@ Profile
     <div class="col-lg-12 col-md-12 col-sm-4 text-center text-sm-left mb-0">
       <span class="text-uppercase page-subtitle">Halaman Profile</span>
       <h3 class="page-title">Selamat Datang di Halaman profile anda </h3>
+      <br>
+      @if (session('success'))
+          <div class="alert alert-success">
+            {{ session('success') }}
+          </div>
+          @endif
     </div>
   </div>
   <div class="row">
@@ -78,8 +84,8 @@ Profile
                      </div>
                      <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="feEmailAddress">No rekening</label>
-                        <input required type="text" class="form-control" id="rek" placeholder="Nomor Rekening" value="{{Auth::user()->no_rek}}" disabled="" name="no_rek"> </div>
+                        <label for="feEmailAddress">No Virtual Account</label>
+                        <input required type="text" class="form-control" id="virtual_account" placeholder="Nomor virtual_account" value="{{Auth::user()->virtual_account}}" disabled="" name="virtual_account"> </div>
                         <div class="form-group col-md-6">
                          <label for="feInputAddress">Alamat</label>
                          <input required type="text" class="form-control" id="Address" placeholder="Alamat" value="{{Auth::user()->address}}" disabled="" name="address">
@@ -95,30 +101,26 @@ Profile
           </ul>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12col-xs-12 text-right">
-          <a onclick="gantipass()" href="#">Ubah Password ?</a>
+          <a href="{{route('ganti-kata-sandi')}}">Ubah Kata sandi ?</a>
         </div>
       </div>
       <div class="col-lg-8" id="show" style="display: none">
         <div class="card card-small mb-4">
           <div class="card-header border-bottom">
-            <h6 class="m-0">Tentang Akun</h6>
+            <h6 class="m-0">Ubah Kata sandi</h6>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item p-3">
               <div class="row">
                 <div class="col">
-                  <form method="POST" action="profile/edit">
+                  <form method="POST" action="{{route('edit-Kata-sandi')}}">
                     @csrf
                     <div class="form-row">
                      </div>
                      <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="feEmailAddress">Ganti Kata sandi</label>
-                        <input type="text" name="password" placeholder="Masukan Kata sandi Baru" class="form-control">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="feEmailAddress">Tulis Ulang Kata sandi</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Ulangi Kata sandi Baru">
+                      <div class="form-group col-md-12">
+                        <label for="feEmailAddress">Masuksan Kata sandi Asal</label>
+                        <input type="password" name="password" placeholder="Masukan Kata sandi Asal" class="form-control">
                       </div>
                      </div>
                      <div id="save">
@@ -146,7 +148,7 @@ Profile
     document.getElementById("telp").disabled = false;
     document.getElementById("email").disabled = false;
     document.getElementById("nik").disabled = false;
-    document.getElementById("rek").disabled = false;
+    document.getElementById("virtual_account").disabled = false;
     document.getElementById("Address").disabled = false;
 
   }
@@ -156,17 +158,9 @@ Profile
     document.getElementById("telp").disabled = true;
     document.getElementById("email").disabled = true;
     document.getElementById("nik").disabled = true;
-    document.getElementById("rek").disabled = true;
+    document.getElementById("virtual_account").disabled = true;
     document.getElementById("Address").disabled = true;
 
-  }
-  function gantipass(){
-    document.getElementById("block").style.display = "none";
-     document.getElementById("show").style.display = "block";
-  }
-  function batalgantipass(){
-    document.getElementById("block").style.display = "block";
-     document.getElementById("show").style.display = "none";
   }
 </script>
 @stop
