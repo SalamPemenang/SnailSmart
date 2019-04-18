@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryPaymentTable extends Migration
+class CreatePaymentSchoolTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCategoryPaymentTable extends Migration
      */
     public function up()
     {
-         Schema::create('category_payment', function (Blueprint $table) {
+        Schema::create('payment_school', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tahunan')->nullable();
             $table->string('bulanan')->nullable();
@@ -33,6 +33,6 @@ class CreateCategoryPaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_payment');
+        Schema::dropIfExists('payment_school');
     }
 }

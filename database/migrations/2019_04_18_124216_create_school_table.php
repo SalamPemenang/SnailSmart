@@ -15,8 +15,6 @@ class CreateSchoolTable extends Migration
     {
         Schema::create('school', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('payment_id')->nullable();
-            $table->foreign('payment_id')->references('id')->on('category_payment')->onDelete('cascade');
             $table->string('npsn')->nullable();
             $table->string('no_rek')->nullable();
             $table->string('name')->nullable();
