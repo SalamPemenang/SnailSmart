@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSchoolTable extends Migration
+class CreateAgenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateSchoolTable extends Migration
      */
     public function up()
     {
-        Schema::create('school', function (Blueprint $table) {
+        Schema::create('agen', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('payment_id')->nullable();
-            $table->foreign('payment_id')->references('id')->on('category_payment')->onDelete('cascade');
-            $table->string('npsn')->nullable();
+            $table->string('nik')->nullable();
             $table->string('no_rek')->nullable();
+            $table->string('virtual_account')->nullable();
             $table->string('name')->nullable();
+            $table->string('email')->unique();
+            $table->string('password')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
-            $table->string('email')->nullable();
-            $table->string('password')->nullable();
-            $table->string('website')->nullable();
+            $table->string('photo')->default('default.jpg');
+            $table->string('saldo')->nullable();
+            $table->string('save')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateSchoolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('school');
+        Schema::dropIfExists('agen');
     }
 }
