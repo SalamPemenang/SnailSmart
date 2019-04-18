@@ -16,7 +16,7 @@ class UserController extends Controller
         $phone = $request->phone;
         $email = $request->email;
         $nik = $request->nik;
-        $no_rek = $request->no_rek;
+        $virtual_account = $request->virtual_account;
         $address = $request->address;
 
         $save = Auth::User();
@@ -24,7 +24,7 @@ class UserController extends Controller
         $save->phone = $phone;
         $save->email = $email;
         $save->nik = $nik;
-        $save->no_rek = $no_rek;
+        $save->virtual_account = $virtual_account;
         $save->address = $address;
         $save->save();
 

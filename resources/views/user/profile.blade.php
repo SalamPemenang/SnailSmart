@@ -32,7 +32,7 @@ Profile
 
             <h4 class="mb-0">{{Auth::user()->name}}</h4>
             <span class="text-muted d-block mb-2">
-              <span><b>No Rekening</b></span> : {{Auth::user()->no_rek}}
+              <span><b>Virtual account</b></span> : {{Auth::user()->virtual_account}}
             </span>
             <span class="text-muted d-block mb-2">
               <span><b>Nomor telepon</b></span> : {{Auth::user()->phone}}
@@ -78,8 +78,8 @@ Profile
                      </div>
                      <div class="form-row">
                       <div class="form-group col-md-6">
-                        <label for="feEmailAddress">No rekening</label>
-                        <input required type="text" class="form-control" id="rek" placeholder="Nomor Rekening" value="{{Auth::user()->no_rek}}" disabled="" name="no_rek"> </div>
+                        <label for="feEmailAddress">Virtual Account</label>
+                        <input required type="text" class="form-control" id="rek" placeholder="Nomor Rekening" value="{{Auth::user()->virtual_account}}" disabled="" name="virtual_account"> </div>
                         <div class="form-group col-md-6">
                          <label for="feInputAddress">Alamat</label>
                          <input required type="text" class="form-control" id="Address" placeholder="Alamat" value="{{Auth::user()->address}}" disabled="" name="address">
@@ -144,7 +144,7 @@ Profile
     document.getElementById("telp").disabled = false;
     document.getElementById("email").disabled = false;
     document.getElementById("nik").disabled = false;
-    document.getElementById("rek").disabled = false;
+    document.getElementById("rek").disabled = true;
     document.getElementById("Address").disabled = false;
 
   }
