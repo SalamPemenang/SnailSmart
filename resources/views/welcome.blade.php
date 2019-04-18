@@ -67,8 +67,8 @@
             Kapan saja dan dimana saja dengan aplikasi To-Pay"
         </h5>
         <div class="header-button">
-            <a href="#" class="btn btn-one">Masuk</a>
-            <a href="#" class="btn btn-one">Daftar</a>
+            <a href="login" class="btn btn-one">Masuk</a>
+            <a href="register" class="btn btn-one">Daftar</a>
         </div>
     </div>
 </div>
@@ -77,7 +77,26 @@
 </header>
 <!-- Header Section End --> 
 
+<!-- Business Plan Section Start -->
+<section id="services">
+  <div class="container">
 
+    <div class="row">
+      <!-- Start Col -->
+  </div>
+  <!-- End Col -->
+  <!-- Start Col -->
+  <div class="col-lg-12 col-md-12 pl-4 text-center">
+    <div class="business-item-info">
+      <h3>Tentang Kami</h3>
+      <p>To-Pay adalah aplikasi yang memberikan kemudahan <br>dalam hal keuangan, Seperti menabung,pembayaran sekolah<br>maupun 
+      berdonasi.</p>
+  </div>
+</div>
+<!-- End Col -->
+
+</div>
+</div>
 <!-- Services Section Start -->
 <section id="services" class="section">
   <div class="container">
@@ -118,31 +137,10 @@
 </div>
 </section>
 <!-- Services Section End -->
-
-
-
-<!-- Business Plan Section Start -->
-<section id="business-plan">
-  <div class="container">
-
-    <div class="row">
-      <!-- Start Col -->
-  </div>
-  <!-- End Col -->
-  <!-- Start Col -->
-  <div class="col-lg-12 col-md-12 pl-4 text-center">
-    <div class="business-item-info">
-      <h3>Tentang Kami</h3>
-      <p>To-Pay adalah aplikasi yang memberikan kemudahanbr<br>dalam hal keuangan, Seperti menabung,pembayaran sekolah<br>maupun 
-      berdonasi.</p>
-  </div>
-</div>
-<!-- End Col -->
-
-</div>
-</div>
 </section>
 <!-- Business Plan Section End -->
+
+
 
 
 <!-- Team section Start -->
@@ -153,9 +151,8 @@
       <div class="col-lg-12">
         <div class="team-text section-header text-center">  
           <div>   
-            <h2 class="section-title">Tim Kami</h2>
+            <h2 class="section-title text-white">Tim Kami</h2>
             <div class="desc-text">
-              <hr width="300">
           </div>
       </div> 
   </div>
@@ -167,7 +164,7 @@
 <div class="row">
   <!-- Start Col -->
   <div class="col-lg-4 col-md-6 col-xs-12">
-    <div class="single-team" style="box-shadow: 10px 10px 10px">
+    <div class="single-team">
       <div class="team-thumb">
         <img src="img/B.jpg" class="img-fluid" alt="">
     </div>
@@ -175,13 +172,25 @@
     <div class="team-details">
       <div class="team-social-icons">
           <ul class="social-list">
-            <li><a href="#"><i class="lni-facebook-original"></i></a></li>
-            <li><a href="#"><i class="lni-instagram-original"></i></a></li>
-            <li><a href="#"><i class="lni-whatsapp"></i></a></li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100005259739165">
+               <i class="lni-facebook-original"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/brianprahmadi/?hl=id">
+                <i class="lni-instagram-original"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=6285798582591">
+                <i class="lni-whatsapp"></i>
+              </a>
+            </li>
         </ul>
     </div> 
     <div class="team-inner text-center">
-      <h5 class="team-title">Brian Prahmadi</h5>
+      <h5 class="team-title text-white">Brian Prahmadi</h5>
       <button class="btn btn-lihat-profile">Lihat Profile</button>
   </div>
 </div>
@@ -191,7 +200,7 @@
 
 <!-- Start Col -->
 <div class="col-lg-4 col-md-6 col-xs-12">
-    <div class="single-team"  style="box-shadow: 10px 10px 10px">
+    <div class="single-team">
       <div class="team-thumb">
         <img src="img/d.jpg" class="img-fluid" alt="">
     </div>
@@ -199,13 +208,25 @@
     <div class="team-details">
       <div class="team-social-icons">
           <ul class="social-list">
-            <li><a href="#"><i class="lni-facebook-original"></i></a></li>
-            <li><a href="#"><i class="lni-instagram-original"></i></a></li>
-            <li><a href="#"><i class="lni-whatsapp"></i></a></li>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100015608471783">
+                <i class="lni-facebook-original"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/__dani.31/?hl=id">
+                <i class="lni-instagram-original"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=6283822210991">
+                <i class="lni-whatsapp"></i>
+              </a>
+            </li>
         </ul>
     </div>
     <div class="team-inner text-center">
-      <h5 class="team-title">Dani Ramdani</h5>
+      <h5 class="team-title text-white">Dani Ramdani</h5>
       <button class="btn btn-lihat-profile">Lihat Profile</button>
   </div>
 </div>
@@ -215,7 +236,7 @@
 
 <!-- Start Col -->
 <div class="col-lg-4 col-md-6 col-xs-12">
-    <div class="single-team"  style="box-shadow: 10px 10px 10px">
+    <div class="single-team">
       <div class="team-thumb">
         <img src="img/pan.jpg" class="img-fluid" alt="">
     </div>
@@ -223,13 +244,25 @@
     <div class="team-details">
       <div class="team-social-icons">
           <ul class="social-list">
-            <li><a href="#"><i class="lni-facebook-original"></i></a></li>
-            <li><a href="#"><i class="lni-instagram-original"></i></a></li>
-            <li><a href="#"><i class="lni-whatsapp"></i></a></li>
+            <li>
+              <a href="https://www.facebook.com/irfan.abdulmuin">
+                <i class="lni-facebook-original"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/abdulmuin62/?hl=id">
+                <i class="lni-instagram-original"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=6285759903315">
+                <i class="lni-whatsapp"></i>
+              </a>
+            </li>
         </ul>
     </div>
     <div class="team-inner text-center">
-      <h5 class="team-title">Irfan Abdul Mu'in</h5>
+      <h5 class="team-title text-white">Irfan Abdul Mu'in</h5>
       <button class="btn btn-lihat-profile">Lihat Profile</button>
   </div>
 </div>
@@ -381,7 +414,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="site-info text-center">
-          <span>Design By <a href="" style="color: #00febf;">SnailSmart</a> &copy; 2019</span>
+          <span>Design By <a href="" style="color: #00febf;">SnailSmart</a></span>
       </div>              
 
   </div>
