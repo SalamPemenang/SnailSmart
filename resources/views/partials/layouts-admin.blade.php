@@ -95,14 +95,15 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-nowrap px-3 text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  <img class="user-avatar rounded-circle mr-2" src="{{asset('img/profile/'. Auth::guard('admin')->user()->photo)}}">
-                  <span class="text-white">{{Auth::guard('admin')->user()->name}}
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <img class="user-avatar rounded-circle mr-2" src="{{asset('img/profile/'. Auth::user()->photo)}}">
+                  <span class="text-white">{{Auth::user()->name}}
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-small">
                   <a class="dropdown-item" href="">
                     <i class="material-icons text-dark">&#xE7FD;</i> Profile</a>
-                    <a class="dropdown-item text-danger" href="#">
+                    <a class="dropdown-item text-danger" href="{{route('logout')}}"onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
                       <i class="material-icons text-danger">&#xE879;</i>  <span href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();">
