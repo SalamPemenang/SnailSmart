@@ -55,7 +55,7 @@ Profile
             <li class="list-group-item p-3">
               <div class="row">
                 <div class="col">
-                  <form method="POST" action="profile/edit">
+                  <form method="POST" action="{{route('edit-profile')}}">
                     @csrf
                     <div class="form-row">
                       <div class="form-group col-md-6">
@@ -125,6 +125,8 @@ Profile
                       <button type="submit" class="btn btn-success">Ganti Kata sandi</button>
                     </div>
                   </form>
+                  <br>
+                  <button onclick="batalgantipass()" class="btn btn-default">Batal</button>
                 </div>
               </div>
             </li>
@@ -139,7 +141,7 @@ Profile
 
 <script>
   function myFunction() {
-    document.getElementById("save").innerHTML = '<button type="submit" class="btn btn-success">save</button>&nbsp;<button onclick="batal()" class="btn btn-default">Batal</button'
+    document.getElementById("save").innerHTML = '<button type="submit" class="btn btn-success">save</button>&nbsp;<button onclick="batal()" class="btn btn-default">Batal</button>'
     document.getElementById("Name").disabled = false;
     document.getElementById("telp").disabled = false;
     document.getElementById("email").disabled = false;
@@ -161,6 +163,10 @@ Profile
   function gantipass(){
     document.getElementById("block").style.display = "none";
      document.getElementById("show").style.display = "block";
+  }
+  function batalgantipass(){
+    document.getElementById("block").style.display = "block";
+     document.getElementById("show").style.display = "none";
   }
 </script>
 @stop
