@@ -11,31 +11,33 @@
 							<table class="table table-striped table-bordered dt-row nowrap mt-4">
 								<tr>
 									<th>No</th>
-									<th>NPSN</th>
+									<th>NIK</th>
 									<th>No Rek</th>
+									<th>No KTP</th>
 									<th>Nama</th>
 									<th>Phone</th>
-									<th>Website</th>
 									<th>Created_at</th>
 									<th>Updated_at</th>
 									<th colspan="2">Aksi</th>
 								</tr>
 								<?php $no = 1; ?>
-								@foreach($sekolah as $value)
+								@foreach($agen as $value)
 								<tr>
 									<td>{{$no++}}</td>
-									<td>{{$value->npsn}}</td>
+									<td>{{$value->nik}}</td>
 									<td>{{$value->no_rek}}</td>
+									<td>{{$value->no_ktp}}</td>
 									<td>{{$value->name}}</td>
 									<td>{{$value->phone}}</td>
-									<td>{{$value->website}}</td>
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>
 									<td width="10px">
-										<a href="" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{route('admin.agen.edit', $value->id)}}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
-										<form action="">
+										<form action="{{route('admin.agen.delete', ($value->id))}}" method="POST">
+											@csrf
+											<input type="hidden" name="_method" value="DELETE">
 											<button class="btn btn-danger btn-sm">Hapus</button>
 										</form>
 									</td>

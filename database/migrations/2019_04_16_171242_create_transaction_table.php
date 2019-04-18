@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDonateTable extends Migration
+class CreateTransactionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateDonateTable extends Migration
      */
     public function up()
     {
-        Schema::create('donate', function (Blueprint $table) {
+        Schema::create('transaction', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedInteger('government_id')->nullable();
-            $table->foreign('government_id')->references('id')->on('government')->onDelete('cascade');
-            $table->string('donate')->nullable();
+            $table->string('debit')->nullable();
+            $table->string('kredit')->nullable();
+            $table->string('ket')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateDonateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donate');
+        Schema::dropIfExists('transaction');
     }
 }
