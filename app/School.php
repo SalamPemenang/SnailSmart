@@ -6,18 +6,16 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Government extends Authenticatable
+class School extends Authenticatable
 {
+
     use Notifiable;
 
-    protected $table = 'government';
-
-    protected $primaryKey = 'id';
+    protected $table = 'government_school';
 
     protected $fillable = [
     		'npsn',
     		'no_rek',
-            'category_id',
     		'name',
     		'type',
     		'address',
@@ -27,14 +25,8 @@ class Government extends Authenticatable
     		'website',
     ];
 
-    public function donate()
+    public function transaction()
     {
-        return $this->hasMany('App\Donate');
+    	return $this->hasMany('App\Transaction');
     }
-
-    public function category()
-    {
-        return $this->belongsTo('App\Category');
-    }
-    
 }

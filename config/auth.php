@@ -45,6 +45,7 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
@@ -53,6 +54,34 @@ return [
             'driver' => 'token',
             'provider' => 'admins',
         ],
+
+        'agen' => [
+            'driver' => 'session',
+            'provider' => 'agen',
+        ],
+        'agen-api' => [
+            'driver' => 'token',
+            'provider' => 'agen',
+        ],
+
+        'school' => [
+            'driver' => 'session',
+            'provider' => 'school',
+        ],
+        'school-api' => [
+            'driver' => 'token',
+            'provider' => 'school',
+        ],
+
+        'government' => [
+            'driver' => 'session',
+            'provider' => 'government',
+        ],
+        'government-api' => [
+            'driver' => 'token',
+            'provider' => 'government',
+        ],
+
     ],
 
     /*
@@ -77,9 +106,25 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+
+        'agen' => [
+            'driver' => 'eloquent',
+            'model' => App\Agen::class,
+        ],
+
+        'school' => [
+            'driver' => 'eloquent',
+            'model' => App\School::class,
+        ],
+
+        'government' => [
+            'driver' => 'eloquent',
+            'model' => App\Government::class,
         ],
 
         // 'users' => [
@@ -111,6 +156,21 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'agen' => [
+            'provider' => 'agen',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'school' => [
+            'provider' => 'school',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'government' => [
+            'provider' => 'government',
             'table' => 'password_resets',
             'expire' => 15,
         ],
