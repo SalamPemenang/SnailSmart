@@ -28,7 +28,7 @@ class UserController extends Controller
         $save->address = $address;
         $save->save();
 
-            return redirect()->back();
+            return redirect()->route('profile');
 
     }	
      public function editfotoProfile(Request $request)
