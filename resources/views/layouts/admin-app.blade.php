@@ -10,10 +10,7 @@
 </head>
 <body>
 
-
-	@include('partials.ganti-warna')
-
-	@include('partials.layouts')
+	@include('partials.layouts-admin')
 
     @yield('content')
 

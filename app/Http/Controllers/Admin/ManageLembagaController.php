@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Saldo;
+use App\Government;
 
-class ManageMenabungController extends Controller
+class ManageLembagaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ManageMenabungController extends Controller
      */
     public function index()
     {
-        $nabung = Saldo::all();
-        return view('admin.nabung.index', ['nabung' => $nabung]);
+        $lembaga = Government::all();
+        return view('admin.lembaga.index', ['lembaga' => $lembaga]);
     }
 
     /**
@@ -37,9 +37,7 @@ class ManageMenabungController extends Controller
      */
     public function store(Request $request)
     {
-        $saldo = new Saldo;
-        $saldo->nominal = $request->nominal;
-        $saldo->save();
+        //
     }
 
     /**
@@ -61,8 +59,7 @@ class ManageMenabungController extends Controller
      */
     public function edit($id)
     {
-        $donasi = Donate::find($id);
-        return $donasi;
+        //
     }
 
     /**
@@ -74,9 +71,7 @@ class ManageMenabungController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $saldo = Saldo::find($id);
-        $saldo->nominal = $request->nominal;
-        $saldo->save();
+        //
     }
 
     /**
@@ -87,7 +82,6 @@ class ManageMenabungController extends Controller
      */
     public function destroy($id)
     {
-        $saldo = Saldo::find($id);
-        $saldo->delete();
+        //
     }
 }

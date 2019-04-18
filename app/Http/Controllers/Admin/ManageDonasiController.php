@@ -15,8 +15,8 @@ class ManageDonasiController extends Controller
      */
     public function index()
     {
-        $result = Donate::all();
-        return $result;
+        $donasi = Donate::all();
+        return view('admin.donasi.index', ['donasi' => $donasi]);
     }
 
     /**

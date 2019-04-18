@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGovernmentTable extends Migration
+class CreateGovernmentSchoolTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateGovernmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('government', function (Blueprint $table) {
+        Schema::create('government_school', function (Blueprint $table) {
             $table->increments('id');
             $table->string('npsn')->nullable();
             $table->string('no_rek')->nullable();
             $table->string('name')->nullable();
-            $table->string('type')->nullable();
-            $table->text('address')->nullable();
+            $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();
@@ -35,6 +34,6 @@ class CreateGovernmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('government');
+        Schema::dropIfExists('government_school');
     }
 }

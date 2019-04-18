@@ -9,6 +9,8 @@ class Saldo extends Model
     protected $table = 'saldo';
 
     protected $fillable = [
+    	'debit',
+    	'kredit',
     	'nominal',
     ];
 
