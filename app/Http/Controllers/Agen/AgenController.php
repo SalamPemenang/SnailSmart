@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Agen;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Agen;
+use App\User;
 
 class AgenController extends Controller
 {
@@ -18,4 +19,5 @@ class AgenController extends Controller
     {
     	return view('agen.home');
     }
+    
 }
