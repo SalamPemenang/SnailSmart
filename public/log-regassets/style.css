@@ -59,6 +59,10 @@
     color: white;
     margin-left: -17px;
 }
+.btn-masuk{
+    color: white;
+    background-color: #00febf;
+}
 html, body {font-family: 'Roboto', sans-serif;font-weight:400;}
 body {background:#F6F8FA;}
 .floatleft {float:left}
@@ -3613,7 +3617,7 @@ textarea.auto-size {
 .nk-block:not(.lc-block-alt) .btn-login{
     top:50%;
     margin-top:-50px;
-    right:-25px;
+    right:460px;
 }
 .nk-form, .error-page-wrap{
     background:#fff;

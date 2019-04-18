@@ -29,5 +29,7 @@ Route::group(['prefix' => 'admin'], function(){
 Route::group(['prefix' => 'home'], function(){
 	Route::get('/', 'HomeController@index')->name('home');
 	Route::get('/profile', 'HomeController@profile')->name('profile');
+	Route::post('/profile/edit', 'User\UserController@editProfile')->name('edit-profile');
+	Route::post('/profile/edit/foto', 'User\UserController@editfotoProfile')->name('edit-foto-profile');
 });
 
