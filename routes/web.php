@@ -60,6 +60,9 @@ Route::group(['prefix' => 'home'], function(){
 	Route::get('/profile', 'HomeController@profile')->name('profile')
 	->middleware('verified');
 
+	Route::get('/daftar-jadi-agen', 'User\UserController@daftarjadiagen')->name('daftar-agen')
+	->middleware('verified');
+
 	Route::post('/profile/edit', 'User\UserController@editProfile')->name('edit-profile')
 	->middleware('verified');
 
