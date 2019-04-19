@@ -7,14 +7,16 @@
 			<div class="container mt-3">
 				<div class="row">
 					<div class="col-md-12">
+						<a href="{{route('admin.agen.add')}}" class="btn btn-primary">Tambah Agen</a>
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered dt-row nowrap mt-4">
 								<tr>
 									<th>No</th>
 									<th>NIK</th>
 									<th>No Rek</th>
-									<th>No KTP</th>
+									<th>Virtual Account</th>
 									<th>Nama</th>
+									<th>Email</th>
 									<th>Phone</th>
 									<th>Created_at</th>
 									<th>Updated_at</th>
@@ -26,8 +28,9 @@
 									<td>{{$no++}}</td>
 									<td>{{$value->nik}}</td>
 									<td>{{$value->no_rek}}</td>
-									<td>{{$value->no_ktp}}</td>
+									<td>{{$value->virtual_account}}</td>
 									<td>{{$value->name}}</td>
+									<td>{{$value->email}}</td>
 									<td>{{$value->phone}}</td>
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>

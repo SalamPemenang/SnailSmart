@@ -8,28 +8,31 @@
 					<div class="row justify-content-center">
 						<div class="col-md-8">
 								<div class="shadow-lg p-4 mb-3 rounded">
-									<form action="{{route('admin.agen.update', $agen->id)}}" method="post">
+									<form action="{{route('admin.government.store')}}" method="post">
 										@csrf
-										<input type="hidden" name="_method" value="PUT">
 										<div class="form-group">
-											<label for="nik">NIK*</label>
-											<input type="text" name="nik" id="nik" class="form-control" value="{{$agen->nik}}">
+											<label for="npsn">NPSN*</label>
+											<input type="text" name="npsn" id="npsn" class="form-control">
 										</div>
 										<div class="form-group">
 											<label for="no_rek">No Rek*</label>
-											<input type="text" name="no_rek" id="no_rek" class="form-control" value="{{$agen->no_rek}}">
+											<input type="text" name="no_rek" id="no_rek" class="form-control">
 										</div>
 										<div class="form-group">
 											<label for="name">Nama*</label>
-											<input type="text" name="name" id="name" class="form-control" value="{{$agen->name}}">
+											<input type="text" name="name" id="name" class="form-control">
 										</div>
 										<div class="form-group">
 											<label for="email">Email*</label>
-											<input type="text" name="email" id="email" class="form-control" value="{{$agen->email}}">
+											<input type="text" name="email" id="email" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="password">Password*</label>
+											<input type="password" name="password" id="password" class="form-control">
 										</div>
 										<div class="form-group">
 											<label for="phone">Phone*</label>
-											<input type="text" name="phone" id="phone" class="form-control" value="{{$agen->phone}}">
+											<input type="text" name="phone" id="phone" class="form-control">
 										</div>
 										<div class="form-group">
 											<button class="btn btn-success">Simpan</button>
