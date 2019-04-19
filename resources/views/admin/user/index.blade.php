@@ -12,7 +12,7 @@
 								<tr>
 									<th>No</th>
 									<th>NIK</th>
-									<th>No Rek</th>
+									<th>Virtual Account</th>
 									<th>Nama</th>
 									<th>Phone</th>
 									<th>Created_at</th>
@@ -24,7 +24,7 @@
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->nik}}</td>
-									<td>{{$value->no_rek}}</td>
+									<td>{{$value->virtual_account}}</td>
 									<td>{{$value->name}}</td>
 									<td>{{$value->phone}}</td>
 									<td>{{$value->created_at}}</td>
