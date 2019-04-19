@@ -1,5 +1,7 @@
 @extends('layouts.agen-app')
-
+@section('judul')
+Cari User
+@stop
 @section('content')
 <div class="main-content-container container-fluid px-4">
 	
@@ -17,10 +19,6 @@
 							<form action="{{route('agen.get')}}" method="get">
 								<div class="col-md-8">
 										<input type="text" class="form-control" placeholder="Masukan virtual account user" name="virtual_account">	
-								</div>
-
-									<div class="col-md-8">
-										<input type="text" class="form-control" placeholder="Masukan nama user" name="name">	
 								</div>
 									<button class="btn btn-success">Cari</button>	
 							</form>

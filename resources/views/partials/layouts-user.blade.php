@@ -23,13 +23,18 @@
       <div class="nav-wrapper">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="{{route('home')}}">
+            <a class="nav-link" href="{{route('home')}}">
               <i class="material-icons">dashboard</i>
               <span>Beranda</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="{{ route('logout') }}"
+            <a class="nav-link" href="{{route('daftar-agen')}}">
+              <span><i class="material-icons text-dark">&#xE7FD;</i> Ingin Menjadi Agen ?</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
             <i class="material-icons">&#xE879;</i>

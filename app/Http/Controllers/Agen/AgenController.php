@@ -29,7 +29,7 @@ class AgenController extends Controller
 
     public function getUser(Request $request)
     {
-    	$user = User::where('name', 'like', '%'.request('name').'%')->where('virtual_account', 'like', '%'.request('virtual_account').'%')->paginate(10);
+    	$user = User::where('virtual_account', 'like', '%'.request('virtual_account').'%')->paginate(10);
         return view('agen.search', ['user' => $user]);	
     }
 
