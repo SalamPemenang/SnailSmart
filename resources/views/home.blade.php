@@ -1,5 +1,7 @@
 @extends('layouts.user-app')
-
+@section('judul')
+Beranda
+@stop
 @section('content')
 	<div class="main-content-container container-fluid px-4">
 		<div class="page-header row no-gutters py-4">
