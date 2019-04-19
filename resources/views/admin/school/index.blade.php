@@ -11,20 +11,25 @@
 							<table class="table table-striped table-bordered dt-row nowrap mt-4">
 								<tr>
 									<th>No</th>
-									<th>User ID</th>
-									<th>Government ID</th>
-									<th>Donate</th>
+									<th>NPSN</th>
+									<th>No Rek</th>
+									<th>Name</th>
+									<th>Address</th>
+									<th>Phone</th>
+									<th>Website</th>
 									<th>Created_at</th>
 									<th>Updated_at</th>
 									<th colspan="2">Aksi</th>
 								</tr>
 								<?php $no = 1; ?>
-								@foreach($donasi as $value)
+								@foreach($school as $value)
 								<tr>
 									<td>{{$no++}}</td>
-									<td>{{$value->user_id}}</td>
-									<td>{{$value->government_id}}</td>
-									<td>{{$value->donate}}</td>
+									<td>{{$value->npsn}}</td>
+									<td>{{$value->name}}</td>
+									<td>{{$value->address}}</td>
+									<td>{{$value->phone}}</td>
+									<td>{{$value->website}}</td>
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>
 									<td width="10px">

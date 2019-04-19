@@ -11,7 +11,7 @@ class School extends Authenticatable
 
     use Notifiable;
 
-    protected $table = 'government_school';
+    protected $table = 'school';
 
     protected $fillable = [
     		'npsn',

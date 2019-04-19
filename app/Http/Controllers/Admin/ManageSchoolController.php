@@ -16,7 +16,7 @@ class ManageSchoolController extends Controller
     public function index()
     {
         $school = School::all();
-        return view('admin.sekolah.index', ['school' => $school]);
+        return view('admin.school.index', ['school' => $school]);
     }
 
     /**
