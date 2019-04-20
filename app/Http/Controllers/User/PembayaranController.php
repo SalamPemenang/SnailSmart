@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 namespace App\Http\Controllers\User;
 
@@ -45,6 +45,7 @@ class PembayaranController extends Controller
 
      public function bulanan($id)
      {
+        $bill = Bill::find($id);
         $school = school::find($id);
         $payment = Payment::find($id);
         return view('user.pembayaran.jenisPembayaran.bulanan', compact('payment', 'school', 'bill'));
@@ -104,12 +105,11 @@ class PembayaranController extends Controller
         $type = $request->type;
         $ket = $request->ket;
 
-
         if ($idU) {
            $user = User::find($idU);
         }
 
-        $bill = Bill::find($id);
+        $bill = Bill::find($idB);
         $school = School::find($idS);
         $transaction = new Transaction;
 

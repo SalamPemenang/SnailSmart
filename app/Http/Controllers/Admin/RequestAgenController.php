@@ -39,12 +39,13 @@ class RequestAgenController extends Controller
     {
         $req = new RequestAgen;
         $req->user_id = $request->user_id;
+        $req->type = $request->type;
         $req->answer1 = $request->answer1;
         $req->answer2 = $request->answer2;
         $req->answer3 = $request->answer3;
         $req->save();
 
-        return redirect()->back();
+        return redirect()->back()->with("success", "Pesan Terkirim Mohon Tunggu Konfirmasi Dari Admin Dan Cek Email Yang Anda Masukan");
 
     }
 

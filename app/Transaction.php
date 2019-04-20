@@ -9,9 +9,12 @@ class Transaction extends Model
     protected $table = 'transaction';
 
     protected $fillable = [
+            'user_id',
     		'agen_id',
             'debit',
     		'kredit',
+            'debit_agen',
+            'kredit_agen',
     ];
 
     public function user()

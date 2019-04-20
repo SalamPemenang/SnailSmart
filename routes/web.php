@@ -71,6 +71,12 @@ Route::group(['prefix' => 'home'], function(){
 	Route::get('/', 'HomeController@index')->name('home')
 	->middleware('verified');
 
+	Route::post('/daftar', 'Auth\RegisterController@daftar')->name('daftar')
+	->middleware('verified');
+
+	Route::get('/history/keuangan/{id}', 'User\UserController@historykeuangan')->name('history-keuangan')
+	->middleware('verified');
+
 	Route::get('/profile', 'HomeController@profile')->name('profile')
 	->middleware('verified');
 
