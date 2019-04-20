@@ -8,9 +8,9 @@
 					<div class="row justify-content-center">
 						<div class="col-md-8">
 								<div class="shadow-lg p-4 mb-3 rounded">
-									<form action="{{route('admin.agen.store')}}" method="post">
+									<form action="{{route('admin.agen.update', $agen->id)}}" method="post">
 										@csrf
-										<input type="hidden" name="id" value="{{$agen->id}}">
+										<input type="hidden" name="_method" value="PUT">
 										<div class="form-group">
 											<label for="nik">NIK*</label>
 											<input type="text" name="nik" id="nik" class="form-control" value="{{$agen->nik}}">
@@ -20,12 +20,12 @@
 											<input type="text" name="no_rek" id="no_rek" class="form-control" value="{{$agen->no_rek}}">
 										</div>
 										<div class="form-group">
-											<label for="no_ktp">No KTP*</label>
-											<input type="text" name="no_ktp" id="no_ktp" class="form-control" value="{{$agen->no_ktp}}">
-										</div>
-										<div class="form-group">
 											<label for="name">Nama*</label>
 											<input type="text" name="name" id="name" class="form-control" value="{{$agen->name}}">
+										</div>
+										<div class="form-group">
+											<label for="email">Email*</label>
+											<input type="text" name="email" id="email" class="form-control" value="{{$agen->email}}">
 										</div>
 										<div class="form-group">
 											<label for="phone">Phone*</label>

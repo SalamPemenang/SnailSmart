@@ -26,4 +26,14 @@ class Agen extends Authenticatable
       'saldo',
       'save',
     ];
+
+    public function transaction()
+    {
+      return $this->hasMany('App\Transaction');
+    }
+
+    public function user()
+    {
+      return $this->belongsTo('App\User');
+    }
 }

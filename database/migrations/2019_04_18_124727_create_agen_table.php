@@ -25,7 +25,8 @@ class CreateAgenTable extends Migration
             $table->string('phone')->nullable();
             $table->string('photo')->default('default.jpg');
             $table->string('saldo')->nullable()->default('0');
-            $table->string('save')->nullable();
+            $table->string('save')->nullable()->default('0');
+            $table->string('point')->nullable()->default('0');
             $table->timestamps();
         });
     }
