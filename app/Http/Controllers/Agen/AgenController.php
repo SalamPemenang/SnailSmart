@@ -64,6 +64,8 @@ class AgenController extends Controller
         $b = $request->totalagen;
         $c = $request->get('saldo');
         $d = $request->get('saldouser');
+        $totalpoint = $request->totalpoint;
+        $point = $request->get('point');
 
 		if($id){
 			$user = User::find($id);	
@@ -76,13 +78,21 @@ class AgenController extends Controller
     	$transaction->debit = $request->saldo;
     	$transaction->save();
 
+        // Agen
         $totala = $b - $c;
 
+        // User
         $totalb = $d + $c;
+
+        // Point
+        $totalc = $totalpoint + $point;
 
     	$user->saldo = $totalb;
     	$user->save();
 
+        
+
+        $agen->point = $totalc;
         $agen->saldo = $totala;
         $agen->save();
 
@@ -97,6 +107,9 @@ class AgenController extends Controller
         $b = $request->get('saldoagen');
         $c = $request->get('save');
         $d = $request->get('saveuser');
+        $totalpoint = $request->totalpoint;
+        $point = $request->get('point');
+
 
         if($id){
             $user = User::find($id);    
@@ -108,13 +121,19 @@ class AgenController extends Controller
         $transaction->user_id = $request->user_id;
         $transaction->agen_id = $a;
         $transaction->debit = $request->save;
-        $transaction->kredit = $request->save;
+        $transaction->kredit_agen = $request->save;
         $transaction->save();
 
+        // Agen
         $totala = $b - $c;
 
+        // User
         $totalb = $d + $c;
 
+        // Point
+        $totalc = $totalpoint + $point;
+
+        $agen->point = $totalc;
         $agen->saldo = $totala;
         $agen->save();
 

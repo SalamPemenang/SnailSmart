@@ -17,7 +17,8 @@ Kirim Saldo
 								@csrf
 								<input type="hidden" name="id" value="{{$user->id}}">
 								<input type="hidden" name="user_id" value="{{$user->id}}">
-			
+								<input type="hidden" name="point" value="100">
+								<input type="hidden" name="totalpoint" value="{{$agen->point}}">
 								<input type="hidden" name="saldouser" class="form-control" value="{{$user->saldo}}">
 								<div class="form-group mt-3">
 									<label for="saldo">Kirimkan Saldo Anda*</label>
@@ -29,6 +30,7 @@ Kirim Saldo
 									<br>
 									<input type="number" name="saldo" class="form-control" name="{{$user->saldo}}" min="1" max="{{$agen->saldo}}">
 								</div>
+
 								<input type="hidden" name="agen_id" value="{{$agen->id}}">
 								<input type="hidden" name="totalagen" class="form-control" value="{{$agen->saldo}}">
 						

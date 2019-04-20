@@ -11,7 +11,9 @@
 								<form action="{{route('donasi.edit', $category->id)}}" method="post">
 									@csrf
 									<input type="hidden" name="id" value="{{ Auth::user()->id }}">
-									<input type="hidden" name="saldo" class="form-control" value="{{Auth::user()->saldo}}">
+									<input type="hidden" name="idG" value="{{ $government->id }}">
+									<input type="hidden" name="saldoU" class="form-control" value="{{Auth::user()->saldo}}">
+									<input type="hidden" name="saldoG" class="form-control" value="{{ $government->saldo }}">
 									<div class="form-group">
 										<label for="name">Name*</label>
 										<input type="text" name="user_id" id="name" class="form-control" value="{{Auth::user()->name}}" disabled="">

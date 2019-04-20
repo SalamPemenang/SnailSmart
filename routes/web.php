@@ -76,6 +76,8 @@ Route::group(['prefix' => 'home'], function(){
 
 	Route::get('/daftar-jadi-agen', 'User\UserController@daftarjadiagen')->name('daftar-agen')
 	->middleware('verified');
+	
+	Route::post('/daftar-jadi-agen/post', 'Admin\RequestAgenController@store')->name('daftar-agen.post');
 
 	Route::post('/profile/edit', 'User\UserController@editProfile')->name('edit-profile')
 	->middleware('verified');

@@ -18,15 +18,13 @@ Kirim Tabungan
 								<input type="hidden" name="id" value="{{$user->id}}">
 								<input type="hidden" name="user_id" value="{{$user->id}}">
 								<input type="hidden" name="agen_id" value="{{$agen->id}}">
+								<input type="hidden" name="point" value="100">
+								<input type="hidden" name="totalpoint" value="{{$agen->point}}">
 								<input type="hidden" name="saldoagen" class="form-control" value="{{$agen->saldo}}">
 								<input type="hidden" name="saveuser" class="form-control" value="{{$user->save}}">
 								<div class="form-group mt-3">
-									<label for="saldo">Kirimkan Saldo Anda*</label>
-									<br>
-									<b style="color: red; font-size: 12px;">Catatan : Saldo Yang Akan Anda Kirimkan Akan Masuk Ke Tabungan User</b>
-									<br>
-									<h5>Saldo Anda {{$agen->saldo}}</h5>
-									<input type="number" name="save" class="form-control" name="{{$user->save}}" max="{{$agen->saldo}}" min="1">
+									<label for="saldo">Nabung*</label>
+									<input type="text" name="save" class="form-control" name="{{$user->save}}">
 								</div>
 								<div class="form-group">
 									<button class="btn btn-success">Kirim</button>
