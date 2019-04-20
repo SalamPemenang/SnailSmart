@@ -21,6 +21,8 @@ class CreateTransactionTable extends Migration
             $table->foreign('agen_id')->references('id')->on('agen')->onDelete('cascade');
             $table->string('debit')->nullable();
             $table->string('kredit')->nullable();
+            $table->string('debit_agen')->nullable();
+            $table->string('kredit_agen')->nullable();
             $table->string('ket')->nullable();
             $table->timestamps();
         });
