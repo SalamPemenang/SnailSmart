@@ -28,7 +28,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->tahunan }}</p>
 										</div>
 
-										<a href="{{route('school.tahunan', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.tahunan', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 

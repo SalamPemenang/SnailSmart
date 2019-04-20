@@ -33,6 +33,13 @@
               <span><i class="material-icons text-dark">&#xE7FD;</i> Ingin Menjadi Agen ?</span>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('convert', Auth::user()->id)}}">
+              Convert Tabungan ke Saldo ?
+          </a>
+          </li>
+          
           <li class="nav-item">
             <a class="nav-link"  href="{{ route('logout') }}"
             onclick="event.preventDefault();

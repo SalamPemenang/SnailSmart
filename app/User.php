@@ -15,6 +15,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
+
     protected $fillable = [
       'name', 
       'email', 
@@ -50,6 +51,12 @@ class User extends Authenticatable implements MustVerifyEmail
     public function agen()
     {
       return $this->hasMany('App\Agen');
+    }
+
+
+    public function biil()
+    {
+        return $this->hasMany(Bill::class);
     }
 
 }
