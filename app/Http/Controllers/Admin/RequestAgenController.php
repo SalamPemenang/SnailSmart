@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\RequestAgen;
 
 class RequestAgenController extends Controller
 {
@@ -14,7 +15,8 @@ class RequestAgenController extends Controller
      */
     public function index()
     {
-        //
+        $request = RequestAgen::all();
+        return view('admin.reqAgen.index', ['request' => $request]);
     }
 
     /**

@@ -7,6 +7,7 @@
 			<div class="container mt-3">
 				<div class="row">
 					<div class="col-md-12">
+						<a href="{{route('admin.government.add')}}" class="btn btn-primary">Tambah Lembaga</a>
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered dt-row nowrap mt-4">
 								<tr>
@@ -20,7 +21,7 @@
 									<th colspan="2">Aksi</th>
 								</tr>
 								<?php $no = 1; ?>
-								@foreach($lembaga as $value)
+								@foreach($government as $value)
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->no_rek}}</td>
@@ -30,7 +31,7 @@
 									<td>{{$value->phone}}</td>
 									<td>{{$value->website}}</td>
 									<td width="10px">
-										<a href="{{ route('admin.lembaga.edit', ($value->id)) }}" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{-- {{ route('admin.lembaga.edit', ($value->id)) }} --}}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
 										<form action="">
