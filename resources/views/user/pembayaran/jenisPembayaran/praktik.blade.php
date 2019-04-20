@@ -8,27 +8,32 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="container mt-3">
-						<h3>Halaman Pembayaran Pratik</h3>
+						<h3>Halaman Pembayaran Praktik</h3>
+						<h6>Jumlah Saldo Anda Saat ini Rp.{{Auth::user()->saldo}}</h6>
+
+						<div class="form-group">
+							@if($bill->type_bill !== $bill->remaining)
+								<label>Sisa Biaya yang harus di bayar</label>
+							@else
+								<label>Jumlah Biaya yang harus di bayar</label>
+							@endif
+							
+							<p>Rp.{{ $bill->remaining }}</p>
+						</div>
+						
 						<form action="{{ route('school.payment.proses', $payment->id) }}" method="POST">
 							@csrf
 							
-							<input type="hidden" name="id" value="{{ Auth::user()->id }}">
-							<input type="hidden" name="saldo" value="{{ Auth::user()->saldo }}">
+							<input type="hidden" name="idUser" value="{{ Auth::user()->id }}">
+							<input type="hidden" name="idBill" value="{{ $bill->id }}">
+							<input type="hidden" name="idSchool" value="{{ $school->id }}">
+							<input type="hidden" name="saldoUser" value="{{ Auth::user()->saldo }}">
+							<input type="hidden" name="saldoSchool" value="{{ $school->saldo }}">
+							<input type="hidden" name="ket" value="Bayar SPP Praktik">
+							<input type="hidden" name="type" value="{{ $bill->remaining }}">
 
 							<div class="form-group">
-								<label for="name">Jumlah Yang Harus dibayar</label>
-								<p>Rp.{{ $payment->praktik }}</p>
-							</div>
-
-							<div class="form-group">
-								<select name="nominal" class="form-control">
-									<option value="">-Silahkan Pilih Nominal-</option>
-									<option value="50000">50.000</option>
-									<option value="100000">100.000</option>
-									<option value="200000">200.000</option>
-									<option value="500000">500.000</option>
-									<option value="1000000">1.000.000</option>
-								</select>
+								<input type="text" name="nominal" class="form-control" placeholder="Masukan Nominal Disini">
 							</div>
 
 							<button type="submit" class="btn btn-success">Kirim</button>
