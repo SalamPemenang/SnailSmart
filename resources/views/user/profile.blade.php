@@ -43,6 +43,12 @@ Profile
             <span class="text-muted d-block mb-2">
               <span><b>Nomor telepon</b></span> : {{Auth::user()->phone}}
             </span>
+             <span class="text-muted d-block mb-2">
+              <span><b>Saldo Anda </b></span> : <b>Rp.</b>{{Auth::user()->saldo}}
+            </span>
+            <span class="text-muted d-block mb-2">
+              <span><b>Tabungan Anda </b></span> : <b>Rp.</b>{{Auth::user()->save}}
+            </span>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item p-4">

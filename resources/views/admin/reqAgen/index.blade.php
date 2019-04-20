@@ -1,5 +1,7 @@
 @extends('layouts.admin-app')
-
+@section('judul')
+Request Agen
+@stop
 @section('content')
 <div class="main-content-container container-fluid px-4">
   <!-- Page Header -->
@@ -12,6 +14,7 @@
 								<tr>
 									<th>No</th>
 									<th>User ID</th>
+									<th>Wanna Be</th>
 									<th>Answer 1</th>
 									<th>Answer 2</th>
 									<th>Answer 3</th>
@@ -24,6 +27,7 @@
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->user_id}}</td>
+									<td>{{$value->type}}</td>
 									<td>{{$value->answer1}}</td>
 									<td>{{$value->answer2}}</td>
 									<td>{{$value->answer3}}</td>

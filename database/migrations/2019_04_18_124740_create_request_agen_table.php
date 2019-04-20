@@ -17,6 +17,7 @@ class CreateRequestAgenTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('type')->nullable();
             $table->string('answer1')->nullable();
             $table->string('answer2')->nullable();
             $table->string('answer3')->nullable();

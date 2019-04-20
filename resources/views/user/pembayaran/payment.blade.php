@@ -39,7 +39,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->bulanan }}</p>
 										</div>
 
-										<a href="{{route('school.bulanan', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.bulanan', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 
@@ -50,7 +50,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->daftar_ulang }}</p>
 										</div>
 
-										<a href="{{route('school.dalang', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.dalang', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 
@@ -61,7 +61,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->praktik }}</p>
 										</div>
 
-										<a href="{{route('school.praktik', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.praktik', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 
@@ -72,7 +72,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->pkl }}</p>
 										</div>
 
-										<a href="{{route('school.prakerin', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.prakerin', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 
@@ -83,7 +83,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->ujianakhir }}</p>
 										</div>
 
-										<a href="{{route('school.ujianAkhir', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.ujianAkhir', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 
@@ -94,7 +94,7 @@
 											<p class="display-4s text-center">Rp.{{ $p->ujiannasional }}</p>
 										</div>
 
-										<a href="{{route('school.ujianNasional', $p->id)}}" class="btn btn-success mt-3">Pilih</a>
+										<a href="{{route('school.ujianNasional', Auth::user()->id)}}" class="btn btn-success mt-3">Pilih</a>
 									</div>
 								</div>
 								@endforeach

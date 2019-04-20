@@ -113,7 +113,6 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-nowrap px-3 text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  <img class="user-avatar rounded-circle mr-2" src="{{asset('img/profile/'. Auth::guard('admin')->user()->photo)}}">
                   <span class="text-white">{{Auth::guard('admin')->user()->name}}
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 </a>
