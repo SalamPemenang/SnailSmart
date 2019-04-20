@@ -5,6 +5,8 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
+use App\User;
+use App\Transaction;
 use App\Category;
 use App\Donate;
 use App\Government;
@@ -26,7 +28,7 @@ class DonasiController extends Controller
         $category = null;
         if($id){
             $category = Category::find($id);
-            $government = Government::with('category')->where('category_id',$id)->paginate(8);
+            $government = Government::with('category')->where('donate_id',$id)->paginate(8);
         }else{
             $category = 'semua';
             $government = Government::paginate(8);
@@ -41,9 +43,33 @@ class DonasiController extends Controller
     	return view('user.donasi.formDonate', ['category' => $category,'government' => $government]);
     }
 
-    public function donate(Request $request)
+    public function donasi(Request $request)
     {
-        
+        $id = $request->id;
+        $idG = $request->idG;
+        $saldoU= $request->saldoU;
+        $saldoG = $request->saldoG;
+        $donate = $request->donate;
+
+        if($id){
+            $user = User::find($id);
+        }
+        $government = Government::find($idG);
+        $transaction = new transaction;
+
+        $totalU = $saldoU - $donate;
+        $user->saldo = $totalU;
+        $user->save();
+
+        $totalG = $saldoG + $donate;
+        $government->saldo = $totalG;
+        $government->save();
+
+        $transaction->user_id = $id;
+        $transaction->kredit = $donate;
+        $transaction->save();
+
+        return redirect()->route('donasi.category');
     }
 
 }

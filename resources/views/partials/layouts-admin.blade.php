@@ -23,10 +23,28 @@
       <div class="nav-wrapper">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="{{route('home')}}">
+            <a class="nav-link" href="{{route('admin-dashboard')}}">
               <i class="material-icons">dashboard</i>
               <span>Beranda</span>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.agen')}}" class="nav-link">Manage Agen</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.user')}}" class="nav-link">Manage User</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.government')}}" class="nav-link">Manage Lembaga</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.school')}}" class="nav-link">Manage Sekolah</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.agen.request')}}" class="nav-link">Request Agen</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{-- {{route('admin.government.request')}} --}}" class="nav-link">Request Lembaga</a>
           </li>
           <li class="nav-item">
             <a class="nav-link "  href="{{ route('logout') }}"
@@ -95,8 +113,8 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-nowrap px-3 text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  <img class="user-avatar rounded-circle mr-2" src="{{asset('img/profile/'. Auth::user()->photo)}}">
-                  <span class="text-white">{{Auth::user()->name}}
+                  <img class="user-avatar rounded-circle mr-2" src="{{asset('img/profile/'. Auth::guard('admin')->user()->photo)}}">
+                  <span class="text-white">{{Auth::guard('admin')->user()->name}}
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-small">
