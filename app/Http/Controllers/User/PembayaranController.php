@@ -109,7 +109,7 @@ class PembayaranController extends Controller
            $user = User::find($idU);
         }
 
-        $bill = Bill::find($id);
+        $bill = Bill::find($idB);
         $school = School::find($idS);
         $transaction = new Transaction;
 

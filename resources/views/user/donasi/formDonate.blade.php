@@ -1,5 +1,7 @@
 @extends('layouts.user-app')
-
+@section('judul')
+Donasi
+@stop
 @section('content')
 	 <div class="main-content-container container-fluid px-4">
   <!-- Page Header -->
