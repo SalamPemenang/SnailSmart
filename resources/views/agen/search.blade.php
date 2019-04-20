@@ -4,7 +4,6 @@ Cari User
 @stop
 @section('content')
 <div class="main-content-container container-fluid px-4">
-	
 	<div class="page-header row no-gutters py-4">
 		
 		<div class="container mt-4">
@@ -27,10 +26,7 @@ Cari User
 				</div>
 
 			</div>
-
 		</div>
-
 	</div>
-
 </div>
 @stop
