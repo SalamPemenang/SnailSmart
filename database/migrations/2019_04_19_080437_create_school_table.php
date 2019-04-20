@@ -15,10 +15,13 @@ class CreateSchoolTable extends Migration
     {
         Schema::create('school', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('npsn')->nullable();
             $table->string('no_rek')->nullable();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
+            $table->string('logo')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('password')->nullable();

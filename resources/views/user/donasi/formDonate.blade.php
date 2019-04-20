@@ -8,8 +8,10 @@
 						<div class="row justify-content-center">
 							<div class="col-md-8">
 								<div class="shadow-lg p-4 rounded mb-3">
-								<form action="" method="post">
+								<form action="{{route('donasi.edit', $category->id)}}" method="post">
 									@csrf
+									<input type="hidden" name="id" value="{{ Auth::user()->id }}">
+									<input type="hidden" name="saldo" class="form-control" value="{{Auth::user()->saldo}}">
 									<div class="form-group">
 										<label for="name">Name*</label>
 										<input type="text" name="user_id" id="name" class="form-control" value="{{Auth::user()->name}}" disabled="">
