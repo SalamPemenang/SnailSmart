@@ -64,6 +64,7 @@ class AgenController extends Controller
         $b = $request->totalagen;
         $c = $request->get('saldo');
         $d = $request->get('saldouser');
+        $totalpoint = $request->totalpoint;
         $point = $request->get('point');
 
 		if($id){
