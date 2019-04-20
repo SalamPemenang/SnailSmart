@@ -26,7 +26,7 @@ class RequestAgenController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -37,7 +37,7 @@ class RequestAgenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
@@ -59,7 +59,8 @@ class RequestAgenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $request = RequestAgen::find($id);
+        return view('admin.reqAgen.edit', ['request' => $request]);
     }
 
     /**
@@ -71,7 +72,13 @@ class RequestAgenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request = RequestAgen::find($id);
+        $request->answer1 = $request->answer1;
+        $request->answer2 = $request->answer2;
+        $request->answer3 = $request->answer3;
+        $request->save();
+
+        return redirect()->route('admin.agen.request');
     }
 
     /**
@@ -82,6 +89,10 @@ class RequestAgenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $request = RequestAgen::find($id);
+        $request->delete();
+
+        return redirect()->route('admin.agen.request');
     }
+
 }
