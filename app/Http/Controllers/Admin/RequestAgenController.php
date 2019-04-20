@@ -38,11 +38,13 @@ class RequestAgenController extends Controller
     public function store(Request $request)
     {
         $req = new RequestAgen;
+        $req->user_id = $request->user_id;
         $req->answer1 = $request->answer1;
         $req->answer2 = $request->answer2;
         $req->answer3 = $request->answer3;
         $req->save();
 
+        return redirect()->back();
 
     }
 

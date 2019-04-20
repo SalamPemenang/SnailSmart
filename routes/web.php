@@ -38,7 +38,7 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::post('/manage-school/post', 'Admin\ManageSchoolController@store')->name('admin.school.store');
 	Route::put('/manage-school/update/{id}', 'Admin\ManageSchoolController@update')->name('admin.school.update');
 	Route::delete('/manage-school/{id}', 'Admin\ManageSchoolController@destroy')->name('admin.school.delete');
-
+	
 	// User
 	Route::get('/manage-user', 'Admin\ManageUserController@index')->name('admin.user');
 	Route::get('/manage-user/{id}', 'Admin\ManageUserController@edit')->name('admin.user.edit');
