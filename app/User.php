@@ -52,4 +52,10 @@ class User extends Authenticatable implements MustVerifyEmail
       return $this->hasMany('App\Agen');
     }
 
+
+    public function biil()
+    {
+        return $this->hasMany(Bill::class);
+    }
+
 }
