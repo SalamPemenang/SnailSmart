@@ -18,11 +18,6 @@
 							<input type="hidden" name="saldoSchool" value="{{ $school->saldo }}">
 
 							<div class="form-group">
-								<label for="name">Jumlah Yang Harus dibayar</label>
-								<p>Rp.{{ $payment->tahunan }}</p>
-							</div>
-
-							<div class="form-group">
 								<input type="text" name="nominal" class="form-control" placeholder="Masukan Nominal Disini">
 							</div>
 
