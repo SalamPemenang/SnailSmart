@@ -30,13 +30,8 @@ Daftar Jadi Agen
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div class="card card-small mb-3">
 				<div class="card-body">
-					<form class="add-new-post" action="{{route('daftar-agen.post')}}" method="post">
-						@csrf
-						<input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-						<input class="form-control form-control-lg mb-3" type="text" name="answer1" placeholder="Your Post Title">
-						<input class="form-control form-control-lg mb-3" type="text" name="answer2" placeholder="Your Post Title">
-						<input class="form-control form-control-lg mb-3" type="text" name="answer3" placeholder="Your Post Title">
-						<button class="btn btn-success">Kirim</button>
+					<form class="add-new-post">
+						<input class="form-control form-control-lg mb-3" type="text" placeholder="Your Post Title">
 						<div id="editor-container" class="add-new-post__editor mb-1"></div>
 					</form>
 				</div>
