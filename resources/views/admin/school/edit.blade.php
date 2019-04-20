@@ -8,22 +8,38 @@
 					<div class="row justify-content-center">
 						<div class="col-md-8">
 								<div class="shadow-lg p-4 mb-3 rounded">
-									<form action="{{ route('admin.donasi.store', ($donasi->id)) }}" method="post">
+									<form action="{{ route('admin.school.update', ($school->id)) }}" method="post">
 										@csrf
-										<input type="hidden" name="id" value="{{$donasi->id}}">
+										<input type="hidden" name="_method" value="PUT">
+
 										<div class="form-group">
-											<label for="user_id">Nama User</label>
-											<input type="text" name="user_id" id="user_id" class="form-control" value="{{$donasi->user_id}}">
+											<label for="npsn">NPSN</label>
+											<input type="text" name="npsn" id="npsn" class="form-control" value="{{$school->npsn}}">
 										</div>
 
 										<div class="form-group">
-											<label for="government_id">Nama Lembaga</label>
-											<input type="text" name="government_id" id="government_id" class="form-control" value="{{$donasi->government_id}}">
+											<label for="no_rek">No Rekening</label>
+											<input type="text" name="no_rek" id="no_rek" class="form-control" value="{{$school->no_rek}}">
 										</div>
 
 										<div class="form-group">
-											<label for="donate">Jumlah Donasi</label>
-											<input type="text" name="donate" id="donate" class="form-control" value="{{$donasi->donate}}">
+											<label for="name">Nama Sekolah</label>
+											<input type="text" name="name" id="name" class="form-control" value="{{$school->name}}">
+										</div>
+
+										<div class="form-group">
+											<label for="address">Alamat</label>
+											<textarea name="address" id="address" cols="30" rows="10" class="form-control">{{$school->address}}</textarea>
+										</div>
+
+										<div class="form-group">
+											<label for="phone">Phone</label>
+											<input type="text" name="phone" id="phone" class="form-control" value="{{$school->phone}}">
+										</div>
+
+										<div class="form-group">
+											<label for="website">Website</label>
+											<input type="text" name="website" id="website" class="form-control" value="{{$school->website}}">
 										</div>
 
 										<div class="form-group">

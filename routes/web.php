@@ -22,21 +22,28 @@ Route::group(['prefix' => 'admin'], function(){
 	// Login Admin
 	Route::get('/login', 'Admin\AdminLoginController@index')->name('admin-login');
 	Route::post('/login/added', 'Admin\AdminLoginController@login')->name('admin-store');
+	// Dashboard
 	Route::get('/dashboard', 'Admin\AdminController@index')->name('admin-dashboard');
-
 	// Lembaga
 	Route::get('/manage-government', 'Admin\ManageGovernmentController@index')->name('admin.government');
 	Route::get('/manage-government/add', 'Admin\ManageGovernmentController@create')->name('admin.government.add');
 	Route::get('/manage-government/{id}', 'Admin\ManageGovernmentController@edit')->name('admin.government.edit');
 	Route::post('/manage-government/post', 'Admin\ManageGovernmentController@store')->name('admin.government.store');
-	Route::delete('/manage-government/{delete}', 'Admin\ManageGovernmentController@destroy')->name('admin.government.delete');
-
-
+	Route::put('/manage-government/post/{id}', 'Admin\ManageGovernmentController@update')->name('admin.government.update');
+	Route::delete('/manage-government/{id}', 'Admin\ManageGovernmentController@destroy')->name('admin.government.delete');
 	// Sekolah
 	Route::get('/manage-school', 'Admin\ManageSchoolController@index')->name('admin.school');
+	Route::get('/manage-school/add', 'Admin\ManageSchoolController@create')->name('admin.school.add');
+	Route::get('/manage-school/{id}', 'Admin\ManageSchoolController@edit')->name('admin.school.edit');
+	Route::post('/manage-school/post', 'Admin\ManageSchoolController@store')->name('admin.school.store');
+	Route::put('/manage-school/update/{id}', 'Admin\ManageSchoolController@update')->name('admin.school.update');
+	Route::delete('/manage-school/{id}', 'Admin\ManageSchoolController@destroy')->name('admin.school.delete');
 
 	// User
 	Route::get('/manage-user', 'Admin\ManageUserController@index')->name('admin.user');
+	Route::get('/manage-user/{id}', 'Admin\ManageUserController@edit')->name('admin.user.edit');
+	Route::put('/manage-user/update/{id}', 'Admin\ManageUserController@update')->name('admin.user.update');
+	Route::delete('/manage-user/{id}', 'Admin\ManageUserController@destroy')->name('admin.user.delete');
 
 	// Agen
 	Route::get('/manage-agen', 'Admin\ManageAgenController@index')->name('admin.agen');
@@ -48,9 +55,15 @@ Route::group(['prefix' => 'admin'], function(){
 
 	// Request Agen
 	Route::get('/manage-request', 'Admin\RequestAgenController@index')->name('admin.agen.request');
+	Route::get('/manage-request/{id}', 'Admin\RequestAgenController@edit')->name('admin.agen.request.edit');
+	Route::put('/manage-request/post/{id}', 'Admin\RequestAgenController@update')->name('admin.agen.request.update');
+	Route::delete('/manage-request/delete/{id}', 'Admin\RequestAgenController@destroy')->name('admin.agen.request.delete');
 
 	// Request Government
-	Route::get('/manage-request/government', 'Admin\RequestGovernmentController@index')->name('admin.government.request');
+	// Route::get('/manage-request/government', 'Admin\RequestGovernmentController@index')->name('admin.government.request');
+	// Route::get('/manage-request/government/{id}', 'Admin\RequestGovernmentController@edit')->name('admin.government.request.edit');
+	// Route::put('/manage-request/government/post/{id}', 'Admin\RequestGovernmentController@update')->name('admin.government.request.update');
+	// Route::delete('/manage-request/government/delete/{id}', 'Admin\RequestGovernmentController@destroy')->name('admin.agen.governmet.delete');
 });
 
 // USER

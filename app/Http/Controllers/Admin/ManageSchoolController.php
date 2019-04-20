@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\School;
 
 class ManageSchoolController extends Controller
@@ -26,7 +27,7 @@ class ManageSchoolController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.school.add');
     }
 
     /**
@@ -37,7 +38,18 @@ class ManageSchoolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $school = new School;
+        $school->npsn = $request->npsn;
+        $school->no_rek = $request->no_rek;
+        $school->name = $request->name;
+        $school->email = $request->email;
+        $school->password = Hash::make($request->password);
+        $school->address = $request->address;
+        $school->phone = $request->phone;
+        $school->website = $request->website;
+        $school->save();
+
+        return redirect()->route('admin.school');
     }
 
     /**
@@ -59,7 +71,8 @@ class ManageSchoolController extends Controller
      */
     public function edit($id)
     {
-        //
+        $school = School::find($id);
+        return view('admin.school.edit', ['school' => $school]);
     }
 
     /**
@@ -71,7 +84,16 @@ class ManageSchoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $school = School::find($id);
+        $school->npsn = $request->npsn;
+        $school->no_rek = $request->no_rek;
+        $school->name = $request->name;
+        $school->address = $request->address;
+        $school->phone = $request->phone;
+        $school->website = $request->website;
+        $school->save();
+
+        return redirect()->route('admin.school');
     }
 
     /**
@@ -82,6 +104,9 @@ class ManageSchoolController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $school = School::find($id);
+        $school->delete();
+
+        return redirect()->route('admin.school');
     }
 }

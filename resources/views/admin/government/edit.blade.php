@@ -8,9 +8,9 @@
 					<div class="row justify-content-center">
 						<div class="col-md-8">
 								<div class="shadow-lg p-4 mb-3 rounded">
-									<form action="{{ route('admin.lembaga.store', ($government->id)) }}" method="post">
+									<form action="{{ route('admin.government.update', ($government->id)) }}" method="post">
 										@csrf
-										<input type="hidden" name="id" value="{{$government->id}}">
+										<input type="hidden" name="_method" value="PUT">
 
 										<div class="form-group">
 											<label for="npsn">NPSN</label>
@@ -28,11 +28,6 @@
 										</div>
 
 										<div class="form-group">
-											<label for="address">Alamat</label>
-											<input type="text" name="address" id="address" class="form-control" value="{{$government->address}}">
-										</div>
-
-										<div class="form-group">
 											<label for="phone">Phone</label>
 											<input type="text" name="phone" id="phone" class="form-control" value="{{$government->phone}}">
 										</div>
@@ -40,6 +35,11 @@
 										<div class="form-group">
 											<label for="email">Email</label>
 											<input type="text" name="email" id="email" class="form-control" value="{{$government->email}}">
+										</div>
+
+										<div class="form-group">
+											<label for="website">Website</label>
+											<input type="text" name="website" id="website" class="form-control" value="{{$government->website}}">
 										</div>
 
 										<div class="form-group">
