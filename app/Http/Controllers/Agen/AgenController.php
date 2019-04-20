@@ -144,4 +144,5 @@ class AgenController extends Controller
 
         return redirect()->route('agen.dashboard');
     }
+
 }
