@@ -37,64 +37,78 @@ class PembayaranController extends Controller
      public function tahunan($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.tahunan', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.tahunan', compact('payment', 'school'));
      }
 
      public function bulanan($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.bulanan', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.bulanan', compact('payment', 'school'));
      }
 
       public function dalang($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.daftarUlang', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.daftarUlang', compact('payment', 'school'));
      }
 
     
      public function praktik($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.praktik', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.praktik', compact('payment', 'school'));
      }
 
 
      public function prakerin($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.prakerin', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.prakerin', compact('payment', 'school'));
      }
 
      public function ujianAkhir($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.ujianAkhir', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.ujianAkhir', compact('payment', 'school'));
      }
 
       public function ujianNasional($id)
      {
         $payment = Payment::find($id);
-        return view('user.pembayaran.jenisPembayaran.ujianNasional', compact('payment'));
+        $school = school::find($id);
+        return view('user.pembayaran.jenisPembayaran.ujianNasional', compact('payment', 'school'));
      }
 
      public function Ppayment(Request $request)
      {
-        $id = $request->id;
-        $saldoUser = $request->saldo;
+        $idU = $request->idUser;
+        $idS = $request->idSchool;
+        $saldoUser = $request->saldoUser;
+        $saldoSchool = $request->saldoSchool;
         $nominal = $request->nominal;
 
-        if ($id) {
-           $user = User::find($id);
+        if ($idU) {
+           $user = User::find($idU);
         }
 
+        $school = School::find($idS);
         $transaction = new Transaction;
 
-        $total = $saldoUser - $nominal;
-        $user->saldo = $total;
+        $totalU = $saldoUser - $nominal;
+        $user->saldo = $totalU;
         $user->save();
 
-        $transaction->user_id = $id;
+        $totalS = $saldoSchool + $nominal;
+        $school->saldo = $totalS;
+        $school->save();
+
+        $transaction->user_id = $idU;
         $transaction->kredit = $nominal;
         $transaction->save();
 
