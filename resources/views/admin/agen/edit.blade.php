@@ -1,5 +1,5 @@
 @extends('layouts.admin-app')
-
+@section('judul')
 @section('content')
 <div class="main-content-container container-fluid px-4">
   <!-- Page Header -->
