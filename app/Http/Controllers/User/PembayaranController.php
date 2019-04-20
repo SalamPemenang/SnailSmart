@@ -45,6 +45,7 @@ class PembayaranController extends Controller
 
      public function bulanan($id)
      {
+        $bill = Bill::find($id);
         $school = school::find($id);
         $payment = Payment::find($id);
         return view('user.pembayaran.jenisPembayaran.bulanan', compact('payment', 'school', 'bill'));
@@ -103,7 +104,6 @@ class PembayaranController extends Controller
         $nominal = $request->nominal;
         $type = $request->type;
         $ket = $request->ket;
-
 
         if ($idU) {
            $user = User::find($idU);

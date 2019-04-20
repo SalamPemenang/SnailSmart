@@ -12,7 +12,12 @@
 						<h6>Jumlah Saldo Anda Saat ini Rp.{{Auth::user()->saldo}}</h6>
 
 						<div class="form-group">
-							<label>Jumlah Biaya yang harus di bayar</label>
+							@if($bill->type_bill !== $bill->remaining)
+								<label>Sisa Biaya yang harus di bayar</label>
+							@else
+								<label>Jumlah Biaya yang harus di bayar</label>
+							@endif
+							
 							<p>Rp.{{ $bill->remaining }}</p>
 						</div>
 						
