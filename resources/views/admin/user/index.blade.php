@@ -30,10 +30,12 @@
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>
 									<td width="10px">
-										<a href="" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{route('admin.user.edit', $value->id)}}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
-										<form action="">
+										<form action="{{route('admin.user.delete', $value->id)}}" method="post">
+											@csrf
+											<input type="hidden" name="_method" value="DELETE">
 											<button class="btn btn-danger btn-sm">Hapus</button>
 										</form>
 									</td>

@@ -31,10 +31,12 @@
 									<td>{{$value->phone}}</td>
 									<td>{{$value->website}}</td>
 									<td width="10px">
-										<a href="{{-- {{ route('admin.lembaga.edit', ($value->id)) }} --}}" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{ route('admin.government.edit', ($value->id)) }}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
-										<form action="">
+										<form action="{{route('admin.government.delete', $value->id)}}" method="post">
+											@csrf
+											<input type="hidden" name="_method" value="DELETE">
 											<button class="btn btn-danger btn-sm">Hapus</button>
 										</form>
 									</td>
