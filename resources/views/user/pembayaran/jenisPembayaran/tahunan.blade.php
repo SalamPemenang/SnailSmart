@@ -9,6 +9,11 @@
 				<div class="col-md-12">
 					<div class="container mt-3">
 						<h3>Halaman Pembayaran Tahunan</h3>
+						<h6>Jumlah Saldo Anda Saat ini Rp.{{Auth::user()->saldo}}</h6>
+						<div class="form-group">
+							<label>Jumlah Biaya yang harus di bayar</label>
+							<p>Rp.{{ $payment->tahunan }}</p>
+						</div>
 						<form action="{{ route('school.payment.proses', $payment->id) }}" method="POST">
 							@csrf
 							
