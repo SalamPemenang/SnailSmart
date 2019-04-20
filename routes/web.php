@@ -24,32 +24,33 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::post('/login/added', 'Admin\AdminLoginController@login')->name('admin-store');
 	Route::get('/dashboard', 'Admin\AdminController@index')->name('admin-dashboard');
 
-	// donasi
-	Route::get('/manage-donasi', 'Admin\ManageDonasiController@index')->name('admin.donasi');
-	Route::get('/manage-donasi/{id}', 'Admin\ManageDonasiController@edit')->name('admin.donasi.edit');
-	Route::post('/manage-donasi/post', 'Admin\ManageDonasiController@store')->name('admin.donasi.store');
-	Route::delete('/manage-donasi/{delete}', 'Admin\ManageDonasiController@destroy')->name('admin.donasi.delete');
-
 	// Lembaga
-	Route::get('/manage-lembaga', 'Admin\ManageLembagaController@index')->name('admin.lembaga');
-	Route::get('/manage-lembaga/{id}', 'Admin\ManageLembagaController@edit')->name('admin.lembaga.edit');
-	Route::post('/manage-lembaga/post', 'Admin\ManageLembagaController@store')->name('admin.lembaga.store');
-	Route::delete('/manage-lembaga/{delete}', 'Admin\ManageLembagaController@destroy')->name('admin.lembaga.delete');
+	Route::get('/manage-government', 'Admin\ManageGovernmentController@index')->name('admin.government');
+	Route::get('/manage-government/add', 'Admin\ManageGovernmentController@create')->name('admin.government.add');
+	Route::get('/manage-government/{id}', 'Admin\ManageGovernmentController@edit')->name('admin.government.edit');
+	Route::post('/manage-government/post', 'Admin\ManageGovernmentController@store')->name('admin.government.store');
+	Route::delete('/manage-government/{delete}', 'Admin\ManageGovernmentController@destroy')->name('admin.government.delete');
 
-	// Saldo / Menabung
-	Route::get('/manage-nabung', 'Admin\ManageMenabungController@index')->name('admin.nabung');
 
 	// Sekolah
-	Route::get('/manage-sekolah', 'Admin\ManagePembayaranController@index')->name('admin.sekolah');
+	Route::get('/manage-school', 'Admin\ManageSchoolController@index')->name('admin.school');
 
 	// User
 	Route::get('/manage-user', 'Admin\ManageUserController@index')->name('admin.user');
 
 	// Agen
 	Route::get('/manage-agen', 'Admin\ManageAgenController@index')->name('admin.agen');
+	Route::get('/manage-agen/add', 'Admin\ManageAgenController@create')->name('admin.agen.add');
 	Route::get('/manage-agen/{id}', 'Admin\ManageAgenController@edit')->name('admin.agen.edit');
 	Route::post('/manage-agen/post', 'Admin\ManageAgenController@store')->name('admin.agen.store');
+	Route::put('/manage-agen/post/{id}', 'Admin\ManageAgenController@update')->name('admin.agen.update');
 	Route::delete('/manage-agen/delete/{id}', 'Admin\ManageAgenController@destroy')->name('admin.agen.delete');
+
+	// Request Agen
+	Route::get('/manage-request', 'Admin\RequestAgenController@index')->name('admin.agen.request');
+
+	// Request Government
+	Route::get('/manage-request/government', 'Admin\RequestGovernmentController@index')->name('admin.government.request');
 });
 
 // USER
@@ -99,8 +100,10 @@ Route::group(['prefix' => 'agen'], function(){
 	Route::get('/dashboard', 'Agen\AgenController@index')->name('agen.dashboard');
 	Route::get('/search-user', 'Agen\AgenController@searchUser')->name('agen.search');
 	Route::get('/search-user/add', 'Agen\AgenController@getUser')->name('agen.get');
-	Route::get('/user/{id}', 'Agen\AgenController@formSaldo')->name('agen.edit');
-	Route::post('/search-user/post', 'Agen\AgenController@transferSaldo')->name('agen.post');
+	Route::get('/user/saldo/{id}', 'Agen\AgenController@formSaldo')->name('agen.saldo');
+	Route::get('/user/save/{id}', 'Agen\AgenController@formNabung')->name('agen.save');
+	Route::post('/search-user/post/saldo', 'Agen\AgenController@transferSaldo')->name('agen.post.saldo');
+	Route::post('/search-user/post/save', 'Agen\AgenController@transferNabung')->name('agen.post.save');
 });
 
 // SCHOOL
