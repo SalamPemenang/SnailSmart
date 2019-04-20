@@ -11,7 +11,7 @@ class Category extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-    	'image', 'category',
+    	'image', 'category', 'ket',
     ];
 
     public function government()

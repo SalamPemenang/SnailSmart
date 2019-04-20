@@ -12,9 +12,9 @@
 								<tr>
 									<th>No</th>
 									<th>User ID</th>
-									<th>Answer 1</th>
-									<th>Answer 2</th>
-									<th>Answer 3</th>
+									<th>Jawaban 1</th>
+									<th>Jawaban 2</th>
+									<th>Jawaban 3</th>
 									<th>Created_at</th>
 									<th>Updated_at</th>
 									<th colspan="2">Aksi</th>

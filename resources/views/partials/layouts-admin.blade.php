@@ -29,22 +29,22 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.agen')}}" class="nav-link">Manage Agen</a>
+            <a href="{{route('admin.agen')}}" class="nav-link">Pengaturan Agen</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.user')}}" class="nav-link">Manage User</a>
+            <a href="{{route('admin.category')}}" class="nav-link">Pengaturan Kategori</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.government')}}" class="nav-link">Manage Lembaga</a>
+            <a href="{{route('admin.user')}}" class="nav-link">Pengaturan User</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.school')}}" class="nav-link">Manage Sekolah</a>
+            <a href="{{route('admin.government')}}" class="nav-link">Pengaturan Lembaga</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.agen.request')}}" class="nav-link">Request Agen</a>
+            <a href="{{route('admin.school')}}" class="nav-link">Pengaturan Sekolah</a>
           </li>
           <li class="nav-item">
-            <a href="{{-- {{route('admin.government.request')}} --}}" class="nav-link">Request Lembaga</a>
+            <a href="{{route('admin.agen.request')}}" class="nav-link">Pengaturan Request</a>
           </li>
           <li class="nav-item">
             <a class="nav-link "  href="{{ route('logout') }}"
