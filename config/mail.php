@@ -57,11 +57,8 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'salampemenang2017@gmail.com'),
-<<<<<<< HEAD
         'name' => env('MAIL_FROM_NAME', 'To-pay'),
-=======
-        'name' => env('MAIL_FROM_NAME', 'To-Pay'),
->>>>>>> BRIAN
+
     ],
 
     /*
