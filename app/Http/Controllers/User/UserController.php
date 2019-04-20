@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\USer;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Transaction;
 use Auth;
 use Image;
+use DB;
 
 class UserController extends Controller
 {
@@ -78,5 +80,11 @@ class UserController extends Controller
         return view('user.daftar-agen');
     }
 
+    public function historykeuangan(Request $request,$id){
 
+        $history =  DB::table('transaction')->where('user_id', '=', $request->id)->get();
+        
+        return view('user.history.history', ['history' => $history]); 
+        // return json_encode($history);    
+    }
 }
