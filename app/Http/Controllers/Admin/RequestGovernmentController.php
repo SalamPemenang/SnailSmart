@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\RequestGovernment;
 
 class RequestGovernmentController extends Controller
 {
@@ -14,7 +15,8 @@ class RequestGovernmentController extends Controller
      */
     public function index()
     {
-        //
+        $request = RequestGovernment::all();
+        return view('admin.reqGovernment.index', ['request' => $request]);
     }
 
     /**
@@ -57,7 +59,8 @@ class RequestGovernmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $request = RequestGovernment::find($id);
+        return view('admin.reqGovernment.edit', ['request' => $request]);
     }
 
     /**
@@ -69,7 +72,13 @@ class RequestGovernmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request = RequestGovernment::find($id);
+        $request->answer1 = $request->answer1;
+        $request->answer2 = $request->answer2;
+        $request->answer3 = $request->answer3;
+        $request->save();
+
+        return redirect()->route('admin.government.request');
     }
 
     /**
@@ -80,6 +89,9 @@ class RequestGovernmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $request = RequestGovernment::find($id);
+        $request->delete();
+
+        return redirect()->route('admin.government.request');   
     }
 }

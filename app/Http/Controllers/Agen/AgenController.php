@@ -23,27 +23,36 @@ class AgenController extends Controller
 
     public function searchUser()
     {
-    	$user = User::paginate(10);
+    	$user = User::all();
     	return view('agen.search', ['user' => $user]);
+    }
+
+    public function userAll()
+    {
+        $user = User::all();
+        return view('agen.user-all', ['user' => $user]);   
     }
 
     public function getUser(Request $request)
     {
+        $agen = Agen::all();
     	$user = User::where('virtual_account', 'like', '%'.request('virtual_account').'%')->paginate(10);
-        return view('agen.search', ['user' => $user]);	
+        return view('agen.user-all', ['user' => $user, 'agen' => $agen]);	
     }
 
     public function formSaldo($id)
     {
-        $agen = Agen::find($id);
         $user = User::find($id);
+
+        $agen = Agen::find($id);
+
         return view('agen.transfer-user.transfer', ['user' => $user, 'agen' => $agen]);
     }
 
     public function formNabung($id)
     {
-        $agen = Agen::find($id);
         $user = User::find($id);
+        $agen = Agen::find($id);
         return view('agen.nabung.transfer', ['user' => $user, 'agen' => $agen]);
     }
     
@@ -51,8 +60,8 @@ class AgenController extends Controller
     {
     	
     	$id = $request->get('id');
-        $a = $request->get('agen_id');
-        $b = $request->get('totalagen');
+        $a = $request->agen_id;
+        $b = $request->totalagen;
         $c = $request->get('saldo');
         $d = $request->get('saldouser');
 
@@ -85,9 +94,9 @@ class AgenController extends Controller
 
         $id = $request->get('id');
         $a = $request->get('agen_id');
-        $b = $request->get('totalagen');
-        $c = $request->get('saldo');
-        $d = $request->get('saldouser');
+        $b = $request->get('saldoagen');
+        $c = $request->get('save');
+        $d = $request->get('saveuser');
 
         if($id){
             $user = User::find($id);    
@@ -97,18 +106,22 @@ class AgenController extends Controller
         
 
         $transaction->user_id = $request->user_id;
-        $transaction->debit = $request->saldo;
+        $transaction->agen_id = $a;
+        $transaction->debit = $request->save;
+        $transaction->kredit = $request->save;
         $transaction->save();
 
         $totala = $b - $c;
 
         $totalb = $d + $c;
 
-        $user->saldo = $totalb;
-        $user->save();
-
         $agen->saldo = $totala;
         $agen->save();
+
+        $user->save = $totalb;
+        $user->save();
+
+        
 
         return redirect()->route('agen.dashboard');
     }

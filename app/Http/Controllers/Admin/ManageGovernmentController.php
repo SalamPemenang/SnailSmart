@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Government;
 
 class ManageGovernmentController extends Controller
@@ -16,7 +17,7 @@ class ManageGovernmentController extends Controller
     public function index()
     {
         $government = Government::all();
-        return view('admin.lembaga.index', ['government' => $government]);
+        return view('admin.government.index', ['government' => $government]);
     }
 
     /**
@@ -26,7 +27,7 @@ class ManageGovernmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.government.add');
     }
 
     /**
@@ -37,7 +38,20 @@ class ManageGovernmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $government = new Government;
+        $government->npsn = $request->npsn;
+        $government->no_rek = $request->no_rek;
+        $government->name = $request->name;
+        $government->address = $request->address;
+        $government->email = $request->email;
+        $government->password = Hash::make($request->password);
+        $government->phone = $request->phone;
+        $government->website = $request->website;
+        $government->save();
+
+        return redirect()->route('admin.government');
+
     }
 
     /**
@@ -59,7 +73,8 @@ class ManageGovernmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $government = Government::find($id);
+        return view('admin.government.edit', ['government' => $government]);
     }
 
     /**
@@ -71,7 +86,16 @@ class ManageGovernmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $government = Government::find($id);
+        $government->npsn = $request->npsn;
+        $government->no_rek = $request->no_rek;
+        $government->name = $request->name;
+        $government->email = $request->email;
+        $government->phone = $request->phone;
+        $government->website = $request->website;
+        $government->save();
+
+        return redirect()->route('admin.government');        
     }
 
     /**
@@ -82,6 +106,8 @@ class ManageGovernmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $government = Government::find($id);
+        $government->delete();
+        return redirect()->route('admin.government');
     }
 }
