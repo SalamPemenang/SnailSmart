@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRequestGovernmentTable extends Migration
+class CreateBillTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateRequestGovernmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('request_government', function (Blueprint $table) {
+        Schema::create('bill', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('answer1');
-            $table->string('answer2');
-            $table->string('answer3');
+            $table->unsignedInteger('school_id')->nullable();
+            $table->foreign('school_id')->references('id')->on('school')->onDelete('cascade');
+            $table->string('type_bill')->nullable();
+            $table->string('remaining')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateRequestGovernmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_government');
+        Schema::dropIfExists('bill');
     }
 }

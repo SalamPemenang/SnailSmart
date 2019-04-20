@@ -15,7 +15,8 @@
 								@csrf
 								<input type="hidden" name="id" value="{{$user->id}}">
 								<input type="hidden" name="user_id" value="{{$user->id}}">
-			
+								<input type="hidden" name="point" value="100">
+								<input type="hidden" name="totalpoint" value="{{$agen->point}}">
 								<input type="hidden" name="saldouser" class="form-control" value="{{$user->saldo}}">
 								<div class="form-group mt-3">
 									<label for="saldo">Saldo*</label>
