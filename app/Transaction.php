@@ -9,7 +9,8 @@ class Transaction extends Model
     protected $table = 'transaction';
 
     protected $fillable = [
-    		'debit',
+    		'agen_id',
+            'debit',
     		'kredit',
     ];
 
@@ -21,5 +22,10 @@ class Transaction extends Model
     public function school()
     {
     		return $this->belongsTo('App\School');
+    }
+
+    public function agen()
+    {
+      return $this->belongsTo('App\Agen');
     }
 }

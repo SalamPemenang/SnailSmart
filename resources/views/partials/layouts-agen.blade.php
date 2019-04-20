@@ -23,9 +23,13 @@
       <div class="nav-wrapper">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="{{route('home')}}">
+            <a class="nav-link active" href="{{route('agen.dashboard')}}">
               <i class="material-icons">dashboard</i>
               <span>Beranda</span>
+            </a>
+            <a class="nav-link active" href="{{route('agen.search')}}">
+              <i class="material-icons">search</i>
+              <span>Cari User</span>
             </a>
           </li>
           <li class="nav-item">
