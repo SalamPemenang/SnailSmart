@@ -16,19 +16,7 @@
 							<input type="hidden" name="saldo" value="{{ Auth::user()->saldo }}">
 
 							<div class="form-group">
-								<label for="name">Jumlah Yang Harus dibayar</label>
-								<p>Rp.{{ $payment->tahunan }}</p>
-							</div>
-
-							<div class="form-group">
-								<select name="nominal" class="form-control">
-									<option value="">-Silahkan Pilih Nominal-</option>
-									<option value="50000">50.000</option>
-									<option value="100000">100.000</option>
-									<option value="200000">200.000</option>
-									<option value="500000">500.000</option>
-									<option value="1000000">1.000.000</option>
-								</select>
+								<input type="text" name="nominal" class="form-control" placeholder="Masukan Nominal Disini">
 							</div>
 
 							<button type="submit" class="btn btn-success">Kirim</button>
