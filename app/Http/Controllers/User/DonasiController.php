@@ -46,17 +46,24 @@ class DonasiController extends Controller
     public function donasi(Request $request)
     {
         $id = $request->id;
-        $saldouser = $request->saldo;
+        $idG = $request->idG;
+        $saldoU= $request->saldoU;
+        $saldoG = $request->saldoG;
         $donate = $request->donate;
 
         if($id){
             $user = User::find($id);
         }
+        $government = Government::find($idG);
         $transaction = new transaction;
 
-        $total = $saldouser - $donate;
-        $user->saldo = $total;
+        $totalU = $saldoU - $donate;
+        $user->saldo = $totalU;
         $user->save();
+
+        $totalG = $saldoG + $donate;
+        $government->saldo = $totalG;
+        $government->save();
 
         $transaction->user_id = $id;
         $transaction->kredit = $donate;
