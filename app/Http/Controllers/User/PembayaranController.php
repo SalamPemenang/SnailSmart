@@ -5,9 +5,10 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Transaction;
+use App\Bill;
 use App\School;
 use App\Payment;
+use App\Transaction;
 
 class PembayaranController extends Controller
 {
@@ -36,67 +37,79 @@ class PembayaranController extends Controller
 
      public function tahunan($id)
      {
-        $payment = Payment::find($id);
+        $bill = Bill::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.tahunan', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.tahunan', compact('payment', 'school', 'bill'));
      }
 
      public function bulanan($id)
      {
-        $payment = Payment::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.bulanan', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.bulanan', compact('payment', 'school', 'bill'));
      }
 
       public function dalang($id)
      {
-        $payment = Payment::find($id);
+        $bill = Bill::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.daftarUlang', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.daftarUlang', compact('payment', 'school', 'bill'));
      }
 
     
      public function praktik($id)
      {
-        $payment = Payment::find($id);
+        $bill = Bill::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.praktik', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.praktik', compact('payment', 'school', 'bill'));
      }
 
 
      public function prakerin($id)
      {
-        $payment = Payment::find($id);
+        $bill = Bill::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.prakerin', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.prakerin', compact('payment', 'school', 'bill'));
      }
 
      public function ujianAkhir($id)
      {
-        $payment = Payment::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.ujianAkhir', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.ujianAkhir', compact('payment', 'school', 'bill'));
      }
 
       public function ujianNasional($id)
      {
-        $payment = Payment::find($id);
+        $bill = Bill::find($id);
         $school = school::find($id);
-        return view('user.pembayaran.jenisPembayaran.ujianNasional', compact('payment', 'school'));
+        $payment = Payment::find($id);
+        return view('user.pembayaran.jenisPembayaran.ujianNasional', compact('payment', 'school', 'bill'));
      }
 
      public function Ppayment(Request $request)
      {
+
+        $idB = $request->idBill;
         $idU = $request->idUser;
         $idS = $request->idSchool;
         $saldoUser = $request->saldoUser;
         $saldoSchool = $request->saldoSchool;
+
         $nominal = $request->nominal;
+        $type = $request->type;
+        $ket = $request->ket;
+
 
         if ($idU) {
            $user = User::find($idU);
         }
 
+        $bill = Bill::find($id);
         $school = School::find($idS);
         $transaction = new Transaction;
 
@@ -108,11 +121,19 @@ class PembayaranController extends Controller
         $school->saldo = $totalS;
         $school->save();
 
+        $totalB = $type - $nominal;
+        $bill->school_id = $idS;
+        $bill->user_id = $idU;
+        $bill->type_bill = $type;
+        $bill->remaining = $totalB;
+        $bill->save();
+
         $transaction->user_id = $idU;
         $transaction->kredit = $nominal;
+        $transaction->ket = $ket;
         $transaction->save();
 
-        return redirect()->route('school');
+        return redirect()->back();
      }
 
 }
