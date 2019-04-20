@@ -17,9 +17,11 @@
 						<form action="{{ route('school.payment.proses', $payment->id) }}" method="POST">
 							@csrf
 							
-							<input type="hidden" name="id" value="{{ Auth::user()->id }}">
-							<input type="hidden" name="saldo" value="{{ Auth::user()->saldo }}">
-
+							<input type="hidden" name="idUser" value="{{ Auth::user()->id }}">
+							<input type="hidden" name="idSchool" value="{{ $school->id }}">
+							<input type="hidden" name="saldoUSer" value="{{ Auth::user()->saldo }}">
+							<input type="hidden" name="saldoSchool" value="{{ $school->saldo }}">
+							
 							<div class="form-group">
 								<input type="text" name="nominal" class="form-control" placeholder="Masukan Nominal Disini">
 							</div>
