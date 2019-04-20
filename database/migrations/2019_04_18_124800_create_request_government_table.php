@@ -17,9 +17,9 @@ class CreateRequestGovernmentTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('answer1');
-            $table->string('answer2');
-            $table->string('answer3');
+            $table->string('answer1')->nullable();
+            $table->string('answer2')->nullable();
+            $table->string('answer3')->nullable();
             $table->timestamps();
         });
     }
