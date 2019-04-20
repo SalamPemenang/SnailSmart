@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Donate;
+use Auth;
+use Image;
+use App\Category;
 
-class ManageDonasiController extends Controller
+class ManageCategoryDonateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class ManageDonasiController extends Controller
      */
     public function index()
     {
-        $donasi = Donate::all();
-        return view('admin.donasi.index', ['donasi' => $donasi]);
+        $category = Category::all();
+        return view('admin.category.index', ['category' => $category]);
     }
 
     /**
@@ -26,7 +28,7 @@ class ManageDonasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.add');
     }
 
     /**
@@ -37,9 +39,28 @@ class ManageDonasiController extends Controller
      */
     public function store(Request $request)
     {
-        $donasi = new Donate;
-        $donasi->donate = $request->donate;
-        $donasi->save();
+        
+        if($request->hasFile('image')){
+            $id = $request->get('id');
+
+            $image =$request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(400, 400)->save( public_path('/img/profile/' .$filename));
+
+            if($id){
+                $category = Category::find($id);
+            }else{
+                $category = new Category;    
+            }
+            
+            $category->category = $request->category;
+            $category->ket = $request->ket;
+            $category->image = $filename;
+            $category->save();
+        }
+
+        return redirect()->route('admin.category');
+        
     }
 
     /**
@@ -61,8 +82,8 @@ class ManageDonasiController extends Controller
      */
     public function edit($id)
     {
-        $donasi = Donate::find($id);
-        return $donasi;
+        $category = Category::find($id);
+        return view('admin.category.edit', ['category' => $category]);
     }
 
     /**
@@ -72,12 +93,6 @@ class ManageDonasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $donasi = Donate::find($id);
-        $donasi->donate = $request->donate;
-        $donasi->save();
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -87,7 +102,9 @@ class ManageDonasiController extends Controller
      */
     public function destroy($id)
     {
-        $donasi = Donate::find($id);
-        $donasi->delete();
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect()->back();
     }
 }

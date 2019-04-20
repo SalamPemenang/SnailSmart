@@ -59,6 +59,14 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::put('/manage-request/post/{id}', 'Admin\RequestAgenController@update')->name('admin.agen.request.update');
 	Route::delete('/manage-request/delete/{id}', 'Admin\RequestAgenController@destroy')->name('admin.agen.request.delete');
 
+	// Category Donasi
+	Route::get('/manage-category', 'Admin\ManageCategoryDonateController@index')->name('admin.category');
+	Route::get('/manage-category/add', 'Admin\ManageCategoryDonateController@create')->name('admin.category.add');
+	Route::get('/manage-category/edit/{id}', 'Admin\ManageCategoryDonateController@edit')->name('admin.category.edit');
+	Route::post('/manage-category/added', 'Admin\ManageCategoryDonateController@store')->name('admin.category.post');
+	Route::delete('/manage-category/delete/{id}', 'Admin\ManageCategoryDonateController@destroy')->name('admin.category.delete');
+
+
 	// Request Government
 	// Route::get('/manage-request/government', 'Admin\RequestGovernmentController@index')->name('admin.government.request');
 	// Route::get('/manage-request/government/{id}', 'Admin\RequestGovernmentController@edit')->name('admin.government.request.edit');
