@@ -24,18 +24,49 @@ Daftar Jadi Agen
 					2. Mempunyai Rekening Permata Bank
 					<br>
 					3. Harus siap melayani user yang menabung minimal 12jam
+					<br><br>
+					Agen bisa mengirimkan uang ke user,saldo dari agen bisa dikirim ke tabungan dan saldo user. <br> Setiap Pengiriman Agen Mendapatkan 100 point 
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div class="card card-small mb-3">
 				<div class="card-body">
-					<form class="add-new-post">
-						<input class="form-control form-control-lg mb-3" type="text" placeholder="Your Post Title">
+					@if (session('success'))
+					<div class="alert alert-success">
+						{{ session('success') }}
+					</div>
+					@endif
+					<form class="add-new-post" action="{{route('daftar-agen.post')}}" method="post">
+						@csrf
+						<input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+						<h5>Pilih Salah Satu </h5>
+						<label>
+							Agen
+							<input type="radio" name="type" placeholder="Jawaban Anda" required="" value="Agen">
+						</label>
+						&nbsp;
+						<label>
+							Sekolah
+							<input type="radio" name="type" placeholder="Jawaban Anda" required="" value="Sekolah">
+						</label>
+						&nbsp;
+						<label>
+							Lembaga Donasi
+							<input type="radio" name="type" placeholder="Jawaban Anda" required="" value="Lembaga Donasi">	
+						</label>
+						<br>
+						<label>Alamat lengkap Anda <b style="color: red">*Harus</b></label>
+						<input class="form-control form-control-lg mb-3" type="text" name="answer1" placeholder="Jawaban Anda" required="">
+						<label>Email Yang Akan Di Pakai Oleh Akun Agen <br><b style="color: red">*Cek Akun Yang Telah Dimasukan di Gmail</b></label>
+						<input class="form-control form-control-lg mb-3" type="email" name="answer2" placeholder="Jawaban Anda" required="">
+						<label>Rekening Asli <b style="color: red">*Harus</b></label>
+						<input class="form-control form-control-lg mb-3" type="number" name="answer3" placeholder="Jawaban Anda" required="" min="0">
+						<button class="btn btn-success">Kirim</button>
 						<div id="editor-container" class="add-new-post__editor mb-1"></div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-@stop
+	@stop

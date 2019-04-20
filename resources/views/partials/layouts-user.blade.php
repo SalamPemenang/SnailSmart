@@ -29,20 +29,43 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/home/history/keuangan/{{Auth::user()->id}}">
+              <i class="material-icons">H</i>
+              <span>History Keuangan</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('daftar-agen')}}">
               <span><i class="material-icons text-dark">&#xE7FD;</i> Ingin Menjadi Agen ?</span>
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('school')}}">
+              <span><i class="material-icons">P</i> Pembayaran</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('donasi.category')}}">
+              <span><i class="material-icons">D</i> Donasi</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('convert', Auth::user()->id)}}">
+              <i class="material-icons">C</i>
+              Ubah Tabungan ke Saldo
+          </a>
+          </li>
+          
+          <li class="nav-item">
             <a class="nav-link"  href="{{ route('logout') }}"
             onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
+            document.getElementById('logout').submit();">
             <i class="material-icons">&#xE879;</i>
             <span>
               {{ __('Keluar') }}
             </span>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="logout" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
             </form>
           </a>

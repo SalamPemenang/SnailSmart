@@ -71,13 +71,25 @@ Route::group(['prefix' => 'home'], function(){
 	Route::get('/', 'HomeController@index')->name('home')
 	->middleware('verified');
 
+	Route::post('/daftar', 'Auth\RegisterController@daftar')->name('daftar')
+	->middleware('verified');
+
+	Route::get('/history/keuangan/{id}', 'User\UserController@historykeuangan')->name('history-keuangan')
+	->middleware('verified');
+
 	Route::get('/profile', 'HomeController@profile')->name('profile')
 	->middleware('verified');
+
+// Daftar Agen 
 
 	Route::get('/daftar-jadi-agen', 'User\UserController@daftarjadiagen')->name('daftar-agen')
 	->middleware('verified');
 	
 	Route::post('/daftar-jadi-agen/post', 'Admin\RequestAgenController@store')->name('daftar-agen.post');
+
+	// Convert Uang
+	Route::get('/user-convert/{id}', 'User\MenabungController@formConvert')->name('convert');
+	Route::put('/user-convert/update/{id}', 'User\MenabungController@convert')->name('convert.update');
 
 	Route::post('/profile/edit', 'User\UserController@editProfile')->name('edit-profile')
 	->middleware('verified');
