@@ -16,6 +16,8 @@
 								<input type="hidden" name="id" value="{{$user->id}}">
 								<input type="hidden" name="user_id" value="{{$user->id}}">
 								<input type="hidden" name="agen_id" value="{{$agen->id}}">
+								<input type="hidden" name="point" value="100">
+								<input type="hidden" name="totalpoint" value="{{$agen->point}}">
 								<input type="hidden" name="saldoagen" class="form-control" value="{{$agen->saldo}}">
 								<input type="hidden" name="saveuser" class="form-control" value="{{$user->save}}">
 								<div class="form-group mt-3">
