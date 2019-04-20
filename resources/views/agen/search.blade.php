@@ -1,5 +1,7 @@
 @extends('layouts.agen-app')
-
+@section('judul')
+Cari User
+@stop
 @section('content')
 <div class="main-content-container container-fluid px-4">
 	
