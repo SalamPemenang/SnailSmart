@@ -86,11 +86,25 @@ Route::group(['prefix' => 'home'], function(){
 	Route::get('/donasi/form/{id}', 'User\DonasiController@formDonate')->name('donasi.form')
 	->middleware('verified');
 
-	Route::get('/saldo/{id}', 'User\MenabungController@index')->name('saldo')
-	->middleware('verified');
 	
-	Route::post('/saldo/edit/{id}', 'User\MenabungController@edit')->name('saldo.add')
+	Route::post('/saldo/edit/{id}', 'User\DonasiController@Donasi')->name('donasi.edit')
 	->middleware('verified');
+
+	// Pembayaran
+	Route::get('/Pembayaran', 'User\PembayaranController@school')->name('school')
+	->middleware('verified');
+	Route::get('/spp', 'User\PembayaranController@payment')->name('school.payment')
+	->middleware('verified');
+
+	// Jenis Pembayran
+	Route::get('/spp/tahunan/{id}', 'User\PembayaranController@tahunan')->name('school.tahunan');
+	Route::get('/spp/bulanan/{id}', 'User\PembayaranController@bulanan')->name('school.bulanan');
+	Route::get('/spp/daftar_ulang/{id}', 'User\PembayaranController@dalang')->name('school.dalang');
+	Route::get('/spp/praktik/{id}', 'User\PembayaranController@praktik')->name('school.praktik');
+	Route::get('/spp/prakerin/{id}', 'User\PembayaranController@prakerin')->name('school.prakerin');
+	Route::get('/spp/ujianakhir/{id}', 'User\PembayaranController@ujianAkhir')->name('school.ujianAkhir');
+	Route::get('/spp/ujiannasional/{id}', 'User\PembayaranController@ujianNasional')->name('school.ujianNasional');
+	Route::post('/spp/ujiannasional/{id}', 'User\PembayaranController@Ppayment')->name('school.payment.proses');
 });
 
 // AGEN
