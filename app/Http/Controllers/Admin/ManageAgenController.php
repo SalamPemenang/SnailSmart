@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Agen;
 
 class ManageAgenController extends Controller
@@ -26,7 +27,7 @@ class ManageAgenController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.agen.add');
     }
 
     /**
@@ -37,7 +38,29 @@ class ManageAgenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $virtual =  ("TP".rand(0,1000));
+        
+        $agen = new Agen;
+
+        if ($request->get('virtual')) {
+            $agen->virtual_account = $request->get('virtual');
+        }else{
+            $agen->virtual_account = $virtual;
+        }
+
+
+        $agen->nik = $request->nik;
+        $agen->no_rek = $request->no_rek;
+        $agen->name = $request->name;
+        $agen->email = $request->email;
+        $agen->password = Hash::make($request->password);
+        $agen->phone = $request->phone;
+        $agen->save();
+
+        return redirect()->route('admin.agen');
+
+
     }
 
     /**
@@ -59,7 +82,8 @@ class ManageAgenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $agen = Agen::find($id);
+        return view('admin.agen.edit', ['agen' => $agen]);
     }
 
     /**
@@ -71,7 +95,15 @@ class ManageAgenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $agen = Agen::find($id);
+        $agen->nik = $request->nik;
+        $agen->no_rek = $request->no_rek;
+        $agen->name = $request->name;
+        $agen->email = $request->email;
+        $agen->phone = $request->phone;
+        $agen->save();
+
+        return redirect()->route('admin.agen');
     }
 
     /**
@@ -82,6 +114,8 @@ class ManageAgenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $agen = Agen::find($id);
+        $agen->delete();
+        return redirect()->route('admin.agen');
     }
 }

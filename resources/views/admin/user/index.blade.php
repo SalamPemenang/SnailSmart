@@ -12,7 +12,7 @@
 								<tr>
 									<th>No</th>
 									<th>NIK</th>
-									<th>No Rek</th>
+									<th>Virtual Account</th>
 									<th>Nama</th>
 									<th>Phone</th>
 									<th>Created_at</th>
@@ -24,16 +24,18 @@
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->nik}}</td>
-									<td>{{$value->no_rek}}</td>
+									<td>{{$value->virtual_account}}</td>
 									<td>{{$value->name}}</td>
 									<td>{{$value->phone}}</td>
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>
 									<td width="10px">
-										<a href="" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{route('admin.user.edit', $value->id)}}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
-										<form action="">
+										<form action="{{route('admin.user.delete', $value->id)}}" method="post">
+											@csrf
+											<input type="hidden" name="_method" value="DELETE">
 											<button class="btn btn-danger btn-sm">Hapus</button>
 										</form>
 									</td>

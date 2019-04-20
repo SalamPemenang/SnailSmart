@@ -59,7 +59,8 @@ class ManageUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('admin.user.edit', ['user' => $user]);
     }
 
     /**
@@ -71,7 +72,14 @@ class ManageUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->nik = $request->nik;
+        $user->virtual_account = $request->virtual_account;
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        $user->save();
+
+        return redirect()->route('admin.user');
     }
 
     /**
@@ -82,6 +90,9 @@ class ManageUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('admin.user');
     }
 }
