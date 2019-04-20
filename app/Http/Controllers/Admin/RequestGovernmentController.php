@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\RequestGovernment;
 
 class RequestGovernmentController extends Controller
 {
@@ -14,7 +15,8 @@ class RequestGovernmentController extends Controller
      */
     public function index()
     {
-        //
+        $request = RequestGovernment::all();
+        return view('admin.reqGovernment.index', ['request' => $request]);
     }
 
     /**
