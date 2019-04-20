@@ -11,10 +11,12 @@ class CreatePaymentSchoolTable extends Migration
      *
      * @return void
      */
-    public function up()
+     public function up()
     {
         Schema::create('payment_school', function (Blueprint $table) {
             $table->increments('id');
+             $table->unsignedInteger('school_id')->nullable();
+            $table->foreign('school_id')->references('id')->on('school')->onDelete('cascade');
             $table->string('tahunan')->nullable();
             $table->string('bulanan')->nullable();
             $table->string('daftar_ulang')->nullable();

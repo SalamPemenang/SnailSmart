@@ -15,8 +15,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('school_id')->nullable();
-            $table->foreign('school_id')->references('id')->on('school')->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('nik')->nullable();
             $table->string('virtual_account')->nullable();
@@ -27,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->string('photo')->default('default.jpg');
             $table->string('saldo')->nullable()->default('0');
-            $table->string('save')->nullable();
+            $table->string('save')->nullable()->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
