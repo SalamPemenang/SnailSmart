@@ -7,15 +7,16 @@
 			<div class="container mt-3">
 				<div class="row">
 					<div class="col-md-12">
+						<a href="{{route('admin.school.add')}}" class="btn btn-success">Tambah Sekolah</a>
 						<div class="table-responsive">
 							<table class="table table-striped table-bordered dt-row nowrap mt-4">
 								<tr>
 									<th>No</th>
 									<th>NPSN</th>
 									<th>No Rek</th>
-									<th>Name</th>
-									<th>Address</th>
-									<th>Phone</th>
+									<th>Nama</th>
+									<th>Alamat</th>
+									<th>No Telp</th>
 									<th>Website</th>
 									<th>Created_at</th>
 									<th>Updated_at</th>
@@ -26,6 +27,7 @@
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->npsn}}</td>
+									<td>{{$value->no_rek}}</td>
 									<td>{{$value->name}}</td>
 									<td>{{$value->address}}</td>
 									<td>{{$value->phone}}</td>
@@ -33,10 +35,10 @@
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>
 									<td width="10px">
-										<a href="{{route('admin.donasi.edit', $value->id)}}" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{route('admin.school.edit', $value->id)}}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
-										<form action="{{ route('admin.donasi.delete', ($value->id)) }}" method="POST">
+										<form action="{{ route('admin.school.delete', ($value->id)) }}" method="POST">
 											@csrf
 											<input type="hidden" name="_method" value="DELETE">
 											<button class="btn btn-danger btn-sm">Hapus</button>

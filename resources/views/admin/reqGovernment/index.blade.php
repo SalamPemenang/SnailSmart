@@ -12,9 +12,6 @@
 								<tr>
 									<th>No</th>
 									<th>User ID</th>
-									<th>Question 1</th>
-									<th>Question 2</th>
-									<th>Question 3</th>
 									<th>Answer 1</th>
 									<th>Answer 2</th>
 									<th>Answer 3</th>
@@ -27,9 +24,6 @@
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->user_id}}</td>
-									<td>{{$value->question1}}</td>
-									<td>{{$value->question2}}</td>
-									<td>{{$value->question3}}</td>
 									<td>{{$value->answer1}}</td>
 									<td>{{$value->answer2}}</td>
 									<td>{{$value->answer3}}</td>

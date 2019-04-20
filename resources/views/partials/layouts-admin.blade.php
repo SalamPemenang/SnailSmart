@@ -44,7 +44,7 @@
             <a href="{{route('admin.agen.request')}}" class="nav-link">Request Agen</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin.government.request')}}" class="nav-link">Request Lembaga</a>
+            <a href="{{-- {{route('admin.government.request')}} --}}" class="nav-link">Request Lembaga</a>
           </li>
           <li class="nav-item">
             <a class="nav-link "  href="{{ route('logout') }}"

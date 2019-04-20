@@ -12,9 +12,6 @@
 								<tr>
 									<th>No</th>
 									<th>User ID</th>
-									<th>Question 1</th>
-									<th>Question 2</th>
-									<th>Question 3</th>
 									<th>Answer 1</th>
 									<th>Answer 2</th>
 									<th>Answer 3</th>
@@ -27,19 +24,18 @@
 								<tr>
 									<td>{{$no++}}</td>
 									<td>{{$value->user_id}}</td>
-									<td>{{$value->question1}}</td>
-									<td>{{$value->question2}}</td>
-									<td>{{$value->question3}}</td>
 									<td>{{$value->answer1}}</td>
 									<td>{{$value->answer2}}</td>
 									<td>{{$value->answer3}}</td>
 									<td>{{$value->created_at}}</td>
 									<td>{{$value->updated_at}}</td>
 									<td width="10px">
-										<a href="" class="btn btn-success btn-sm">Ubah</a>
+										<a href="{{route('admin.agen.request.edit', $value->id)}}" class="btn btn-success btn-sm">Ubah</a>
 									</td>
 									<td>
-										<form action="">
+										<form action="{{route('admin.agen.request.delete', $value->id)}}" method="post">
+											@csrf
+											<input type="hidden" name="_method" value="DELETE">
 											<button class="btn btn-danger btn-sm">Hapus</button>
 										</form>
 									</td>

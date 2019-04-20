@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Government;
 
 class ManageGovernmentController extends Controller
@@ -85,13 +86,11 @@ class ManageGovernmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $government = new Government;
+        $government = Government::find($id);
         $government->npsn = $request->npsn;
         $government->no_rek = $request->no_rek;
         $government->name = $request->name;
-        $government->address = $request->address;
         $government->email = $request->email;
-        $government->password = Hash::make($request->password);
         $government->phone = $request->phone;
         $government->website = $request->website;
         $government->save();
